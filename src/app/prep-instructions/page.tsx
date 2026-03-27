@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { getSection } from "@/content";
 import PrepChecklist from "@/components/PrepChecklist";
+import CountdownTimer from "@/components/CountdownTimer";
 
 export const metadata: Metadata = {
   title: "Colonoscopy Prep Instructions",
@@ -40,6 +41,11 @@ export default function PrepInstructions() {
           </span>
           <p className="text-neutral-700 leading-relaxed pt-1.5">{intro}</p>
         </div>
+      </div>
+
+      {/* Countdown Timer */}
+      <div className="mb-10">
+        <CountdownTimer />
       </div>
 
       {/* Timeline with Checklists */}

@@ -1,0 +1,26 @@
+{
+  "name": "Colonoscopy Companion",
+  "short_name": "ColonoscopyCompanion",
+  "description": "Your friendly guide to understanding and preparing for your colonoscopy. Evidence-based information from a Canadian gastroenterologist.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F7FAFC",
+  "theme_color": "#2B6CB0",
+  "orientation": "portrait-primary",
+  "categories": ["health", "medical", "education"],
+  "lang": "en-CA",
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

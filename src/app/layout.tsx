@@ -30,6 +30,10 @@ export const metadata: Metadata = {
     statusBarStyle: "default",
     title: "Colonoscopy Companion",
   },
+  metadataBase: new URL("https://colonoscopycompanion.ca"),
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "Colonoscopy Companion",
     description:
@@ -37,6 +41,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_CA",
     siteName: "Colonoscopy Companion",
+    url: "https://colonoscopycompanion.ca",
   },
 };
 

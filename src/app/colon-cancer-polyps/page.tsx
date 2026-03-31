@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getSection } from "@/content";
+import PolypDiagram from "@/components/PolypDiagram";
 
 export const metadata: Metadata = {
   title: "Colon Cancer & Polyps",
@@ -63,6 +64,13 @@ export default function ColonCancerPolyps() {
             </div>
           ))}
         </div>
+      </div>
+
+      {/* Polyp Visual Guide */}
+      <div className="bg-white rounded-2xl p-6 sm:p-8 border border-neutral-200 shadow-sm mb-10">
+        <h2 className="font-heading text-xl font-semibold text-neutral-800 mb-2 text-center">Visual Guide: Polyp Types</h2>
+        <p className="text-sm text-neutral-500 text-center mb-6">How different polyp types appear on the colon wall</p>
+        <PolypDiagram />
       </div>
 
       {/* Prevention */}

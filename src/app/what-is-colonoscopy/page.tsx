@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getSection } from "@/content";
+import ColonDiagram from "@/components/ColonDiagram";
 
 export const metadata: Metadata = {
   title: "What Is a Colonoscopy?",
@@ -53,6 +54,15 @@ export default function WhatIsColonoscopy() {
             </li>
           ))}
         </ol>
+      </div>
+
+      {/* Anatomy Diagram */}
+      <div className="bg-white rounded-2xl p-6 sm:p-8 border border-neutral-200 shadow-sm mb-10">
+        <h2 className="font-heading text-xl font-semibold text-neutral-800 mb-6 text-center">Understanding the Anatomy</h2>
+        <ColonDiagram />
+        <p className="text-sm text-neutral-500 text-center mt-4 leading-relaxed">
+          During a colonoscopy, the scope travels from the rectum through the entire colon to the cecum, examining every section along the way.
+        </p>
       </div>
 
       <div className="flex justify-between items-center pt-6 border-t border-neutral-200">

@@ -134,7 +134,7 @@ export default function Home() {
             <span className="text-neutral-300">|</span>
             <span>BC Cancer Screening Program</span>
             <span className="text-neutral-300">|</span>
-            <span>Last Updated: March 2026</span>
+            <span>Last Updated: March 31, 2026</span>
           </div>
         </div>
       </section>

@@ -40,9 +40,9 @@ export default function FAQ() {
       </div>
 
       <div className="flex justify-between items-center pt-6 mt-8 border-t border-neutral-200">
-        <Link href="/what-to-expect" className="inline-flex items-center gap-1 text-brand-600 hover:text-brand-700 font-semibold">
+        <Link href="/risks-and-safety" className="inline-flex items-center gap-1 text-brand-600 hover:text-brand-700 font-semibold">
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" /></svg>
-          What to Expect
+          Risks & Safety
         </Link>
         <Link href="/" className="inline-flex items-center gap-1 text-brand-600 hover:text-brand-700 font-semibold">
           Back to Home

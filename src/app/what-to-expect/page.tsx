@@ -84,8 +84,8 @@ export default function WhatToExpect() {
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" /></svg>
           Prep Instructions
         </Link>
-        <Link href="/faq" className="inline-flex items-center gap-1 text-brand-600 hover:text-brand-700 font-semibold">
-          FAQ
+        <Link href="/comfort-and-anxiety" className="inline-flex items-center gap-1 text-brand-600 hover:text-brand-700 font-semibold">
+          Comfort & Anxiety
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
         </Link>
       </div>

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getSection } from "@/content";
 import PrepChecklist from "@/components/PrepChecklist";
 import CountdownTimer from "@/components/CountdownTimer";
+import BowelPrepScale from "@/components/BowelPrepScale";
 
 export const metadata: Metadata = {
   title: "Colonoscopy Prep Instructions",
@@ -120,6 +121,11 @@ export default function PrepInstructions() {
             </ul>
           </div>
         </div>
+      </div>
+
+      {/* Bowel Prep Scale */}
+      <div className="mb-10">
+        <BowelPrepScale />
       </div>
 
       {/* Medications */}

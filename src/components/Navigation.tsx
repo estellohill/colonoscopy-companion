@@ -9,6 +9,8 @@ const navLinks = [
   { href: "/screening-guidelines", label: "Screening" },
   { href: "/prep-instructions", label: "Prep Guide" },
   { href: "/what-to-expect", label: "What to Expect" },
+  { href: "/comfort-and-anxiety", label: "Comfort" },
+  { href: "/risks-and-safety", label: "Safety" },
   { href: "/faq", label: "FAQ" },
 ];
 

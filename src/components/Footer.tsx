@@ -26,8 +26,11 @@ export default function Footer() {
             <ul className="space-y-2.5 text-sm">
               <li><Link href="/prep-instructions" className="text-white/60 hover:text-white transition-colors">Prep Guide</Link></li>
               <li><Link href="/what-to-expect" className="text-white/60 hover:text-white transition-colors">What to Expect</Link></li>
+              <li><Link href="/comfort-and-anxiety" className="text-white/60 hover:text-white transition-colors">Comfort & Anxiety</Link></li>
+              <li><Link href="/risks-and-safety" className="text-white/60 hover:text-white transition-colors">Risks & Safety</Link></li>
               <li><Link href="/faq" className="text-white/60 hover:text-white transition-colors">FAQ</Link></li>
               <li><Link href="/screening-guidelines" className="text-white/60 hover:text-white transition-colors">Screening Guidelines</Link></li>
+              <li><Link href="/for-physicians" className="text-white/60 hover:text-white transition-colors">For Healthcare Providers</Link></li>
             </ul>
           </div>
 
@@ -46,7 +49,7 @@ export default function Footer() {
             </p>
           </div>
           <p className="text-xs text-white/40 text-center">
-            &copy; {currentYear} Colonoscopy Companion. Created by a Canadian gastroenterologist. Last reviewed: March 2026.
+            &copy; {currentYear} Colonoscopy Companion. Created by a Canadian gastroenterologist. Last reviewed: April 2026.
           </p>
         </div>
       </div>

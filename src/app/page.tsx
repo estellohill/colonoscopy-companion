@@ -85,14 +85,14 @@ export default function Home() {
             From understanding the procedure to preparing for it — clear, step-by-step guidance for every stage.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
           {sections.map((section) => {
             const colors = colorMap[section.color] || colorMap.teal;
             return (
               <Link
                 key={section.id}
                 href={`/${section.id}`}
-                className={`group block p-6 rounded-2xl border-2 transition-all duration-200 ${colors.card}`}
+                className={`group block p-5 rounded-2xl border-2 transition-all duration-200 ${colors.card}`}
               >
                 <span className={`inline-flex items-center justify-center w-12 h-12 rounded-xl text-2xl mb-4 ${colors.icon}`}>
                   {section.icon}
@@ -100,7 +100,7 @@ export default function Home() {
                 <h3 className="font-heading font-semibold text-neutral-800 text-lg mb-1.5 group-hover:text-brand-700 transition-colors">
                   {section.title}
                 </h3>
-                <p className="text-sm text-neutral-400 mb-3 font-medium">{section.subtitle}</p>
+                <p className="text-sm text-neutral-500 mb-3 font-medium">{section.subtitle}</p>
                 <p className="text-sm text-neutral-600 leading-relaxed">
                   {section.summary}
                 </p>
@@ -134,7 +134,7 @@ export default function Home() {
             <span className="text-neutral-300">|</span>
             <span>BC Cancer Screening Program</span>
             <span className="text-neutral-300">|</span>
-            <span>Last Updated: March 31, 2026</span>
+            <span>Last Updated: April 2026</span>
           </div>
         </div>
       </section>

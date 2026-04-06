@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getSection } from "@/content";
+import FeedbackWidget from "@/components/FeedbackWidget";
 
 export const metadata: Metadata = {
   title: "What to Expect During a Colonoscopy",
@@ -77,6 +78,10 @@ export default function WhatToExpect() {
             </li>
           ))}
         </ul>
+      </div>
+
+      <div className="mb-10">
+        <FeedbackWidget />
       </div>
 
       <div className="flex justify-between items-center pt-6 border-t border-neutral-200">

@@ -81,3 +81,41 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
 }
+
+/* Print styles */
+@media print {
+  nav, footer, .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 12pt;
+  }
+
+  main {
+    min-height: auto !important;
+  }
+
+  a {
+    color: black !important;
+    text-decoration: none !important;
+  }
+
+  .shadow-sm, .shadow-md, .shadow-lg {
+    box-shadow: none !important;
+  }
+
+  /* Print header with site URL */
+  main::before {
+    content: "colonoscopycompanion.ca — Printed from Colonoscopy Companion";
+    display: block;
+    text-align: center;
+    font-size: 10pt;
+    color: #718096;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 8px;
+    margin-bottom: 16px;
+  }
+}

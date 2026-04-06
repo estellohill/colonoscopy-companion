@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import DoctorQuestions from "@/components/DoctorQuestions";
+import FeedbackWidget from "@/components/FeedbackWidget";
 
 export const metadata: Metadata = {
   title: "Comfort & Anxiety — Feeling Nervous About Your Colonoscopy?",
@@ -182,6 +183,10 @@ export default function ComfortAndAnxiety() {
             </p>
           </div>
         </div>
+      </div>
+
+      <div className="mb-10">
+        <FeedbackWidget />
       </div>
 
       <div className="flex justify-between items-center pt-6 border-t border-neutral-200">

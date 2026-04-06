@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { trackEvent } from "@/lib/analytics";
 
 interface ChecklistProps {
   items: string[];
@@ -22,6 +23,11 @@ export default function PrepChecklist({ items, storageKey, heading }: ChecklistP
     const next = { ...checked, [index]: !checked[index] };
     setChecked(next);
     localStorage.setItem(`prep-${storageKey}`, JSON.stringify(next));
+    trackEvent("checklist_item_toggled", { section: storageKey, item_index: index, checked: next[index] ? 1 : 0 });
+    const newCompleted = Object.values(next).filter(Boolean).length;
+    if (newCompleted === items.length) {
+      trackEvent("checklist_completed", { section: storageKey });
+    }
   };
 
   const completedCount = Object.values(checked).filter(Boolean).length;

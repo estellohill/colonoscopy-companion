@@ -49,6 +49,7 @@ export default function Navigation() {
             onClick={() => setIsOpen(!isOpen)}
             className="lg:hidden p-2 rounded-lg text-neutral-500 hover:bg-neutral-100 transition-colors"
             aria-label="Toggle menu"
+            aria-expanded={isOpen}
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               {isOpen ? (

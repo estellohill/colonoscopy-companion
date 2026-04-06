@@ -87,6 +87,28 @@ export default function ScreeningGuidelines() {
         </div>
       </div>
 
+      {/* Guideline Sources */}
+      <div className="bg-neutral-50 rounded-2xl p-6 border border-neutral-200 mb-10">
+        <h3 className="font-heading font-semibold text-neutral-800 mb-3 text-sm">Sources & Further Reading</h3>
+        <ul className="space-y-2 text-sm">
+          <li>
+            <a href="https://www.cag-acg.org/publications/cag-clinical-practice-guidelines" target="_blank" rel="noopener noreferrer" className="text-brand-600 hover:text-brand-700 underline underline-offset-2">
+              Canadian Association of Gastroenterology (CAG) — Clinical Practice Guidelines
+            </a>
+          </li>
+          <li>
+            <a href="http://www.bccancer.bc.ca/screening/colon" target="_blank" rel="noopener noreferrer" className="text-brand-600 hover:text-brand-700 underline underline-offset-2">
+              BC Cancer Colon Screening Program
+            </a>
+          </li>
+          <li>
+            <a href="https://www.canada.ca/en/public-health/services/chronic-diseases/cancer/colorectal-cancer.html" target="_blank" rel="noopener noreferrer" className="text-brand-600 hover:text-brand-700 underline underline-offset-2">
+              Public Health Agency of Canada — Colorectal Cancer
+            </a>
+          </li>
+        </ul>
+      </div>
+
       <div className="flex justify-between items-center pt-6 border-t border-neutral-200">
         <Link href="/colon-cancer-polyps" className="inline-flex items-center gap-1 text-brand-600 hover:text-brand-700 font-semibold">
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" /></svg>

@@ -1,4 +1,4 @@
-const CACHE_NAME = "colonoscopy-companion-v1";
+const CACHE_NAME = "colonoscopy-companion-v2";
 
 const PRECACHE_URLS = [
   "/",
@@ -7,7 +7,11 @@ const PRECACHE_URLS = [
   "/screening-guidelines",
   "/prep-instructions",
   "/what-to-expect",
+  "/comfort-and-anxiety",
+  "/risks-and-safety",
   "/faq",
+  "/for-physicians",
+  "/feedback",
 ];
 
 self.addEventListener("install", (event) => {

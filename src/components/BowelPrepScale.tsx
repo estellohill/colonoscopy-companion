@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { trackEvent } from "@/lib/analytics";
 
 interface PrepLevel {
   score: number;
@@ -147,9 +148,10 @@ export default function BowelPrepScale() {
             <button
               key={level.score}
               type="button"
-              onClick={() =>
-                setSelected(isSelected ? null : level.score)
-              }
+              onClick={() => {
+                setSelected(isSelected ? null : level.score);
+                if (!isSelected) trackEvent("bowel_prep_score_selected", { score: level.score, label: level.label });
+              }}
               className={`w-full text-left rounded-2xl border-2 transition-all duration-200 ${
                 isSelected
                   ? `${level.borderColor} shadow-md`

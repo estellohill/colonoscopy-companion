@@ -4,6 +4,8 @@ import { getSection } from "@/content";
 import PrepChecklist from "@/components/PrepChecklist";
 import CountdownTimer from "@/components/CountdownTimer";
 import BowelPrepScale from "@/components/BowelPrepScale";
+import PrintButton from "@/components/PrintButton";
+import FeedbackWidget from "@/components/FeedbackWidget";
 
 export const metadata: Metadata = {
   title: "Colonoscopy Prep Instructions",
@@ -33,6 +35,10 @@ export default function PrepInstructions() {
         <span className="inline-flex items-center justify-center w-14 h-14 bg-success-50 rounded-2xl text-3xl mb-4">{section.icon}</span>
         <h1 className="font-heading text-3xl md:text-4xl font-bold text-neutral-800 mb-2">{section.title}</h1>
         <p className="text-lg text-neutral-500 font-medium">{section.subtitle}</p>
+      </div>
+
+      <div className="flex justify-end mb-4">
+        <PrintButton />
       </div>
 
       <div className="bg-brand-50 border border-brand-200 rounded-2xl p-6 mb-10">
@@ -147,6 +153,10 @@ export default function PrepInstructions() {
             </div>
           ))}
         </div>
+      </div>
+
+      <div className="mb-10">
+        <FeedbackWidget />
       </div>
 
       <div className="flex justify-between items-center pt-6 border-t border-neutral-200">

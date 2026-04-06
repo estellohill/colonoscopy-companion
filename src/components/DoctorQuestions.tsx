@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
+import { trackEvent } from "@/lib/analytics";
 
 interface QuestionCategory {
   title: string;
@@ -80,6 +81,7 @@ export default function DoctorQuestions() {
     setChecked((prev) => {
       const next = { ...prev, [key]: !prev[key] };
       localStorage.setItem(STORAGE_KEY_QUESTIONS, JSON.stringify(next));
+      if (next[key]) trackEvent("doctor_question_checked", { question: key });
       return next;
     });
   }, []);

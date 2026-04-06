@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { trackEvent } from "@/lib/analytics";
 
 interface FaqItem {
   q: string;
@@ -17,7 +18,10 @@ export default function FaqAccordion({ questions }: { questions: FaqItem[] }) {
         return (
           <div key={i} className={`bg-white rounded-2xl border overflow-hidden shadow-sm transition-all duration-200 ${isOpen ? "border-brand-300 shadow-md" : "border-neutral-200"}`}>
             <button
-              onClick={() => setOpenIndex(isOpen ? null : i)}
+              onClick={() => {
+                if (!isOpen) trackEvent("faq_question_opened", { question: item.q });
+                setOpenIndex(isOpen ? null : i);
+              }}
               className="w-full flex items-center justify-between p-5 sm:p-6 text-left hover:bg-neutral-50 transition-colors"
             >
               <span className={`font-heading font-semibold pr-4 transition-colors ${isOpen ? "text-brand-700" : "text-neutral-800"}`}>

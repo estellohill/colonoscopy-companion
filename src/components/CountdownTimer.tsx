@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { trackEvent } from "@/lib/analytics";
 
 interface TimelineStep {
   daysOut: number;
@@ -104,6 +105,7 @@ export default function CountdownTimer() {
     if (!procedureDate) return;
     setDaysLeft(getDaysUntil(procedureDate));
     localStorage.setItem("procedure-date", procedureDate);
+    trackEvent("countdown_date_set", { days_until: getDaysUntil(procedureDate) });
   }, [procedureDate]);
 
   // Refresh days at midnight

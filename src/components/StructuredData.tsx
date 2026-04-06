@@ -19,7 +19,7 @@ export default function StructuredData() {
     audience: {
       "@type": "PatientAudience",
     },
-    lastReviewed: "2026-03-26",
+    lastReviewed: "2026-04-06",
     medicalAudience: {
       "@type": "PatientAudience",
       audienceType: "Patient",

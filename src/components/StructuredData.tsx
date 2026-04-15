@@ -20,6 +20,24 @@ export default function StructuredData() {
       "@type": "PatientAudience",
     },
     lastReviewed: "2026-04-06",
+    author: {
+      "@type": "Person",
+      name: "A Canadian Gastroenterologist",
+      jobTitle: "Gastroenterology Fellow",
+    },
+    dateModified: "2026-04-06",
+    citation: [
+      {
+        "@type": "CreativeWork",
+        name: "Canadian Association of Gastroenterology Clinical Practice Guidelines",
+        url: "https://www.cag-acg.org/clinical-practice-guidelines",
+      },
+      {
+        "@type": "CreativeWork",
+        name: "BC Cancer Colon Screening Program",
+        url: "https://www.bccancer.bc.ca/screening/colon",
+      },
+    ],
     medicalAudience: {
       "@type": "PatientAudience",
       audienceType: "Patient",

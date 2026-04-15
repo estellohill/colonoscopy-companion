@@ -1,17 +1,13 @@
-import type { Metadata } from "next";
+"use client";
+
 import Link from "next/link";
-import { getSection } from "@/content";
+import { useSection } from "@/content/useSection";
+import { useLanguage } from "@/i18n/LanguageContext";
 import PrepChecklist from "@/components/PrepChecklist";
 import CountdownTimer from "@/components/CountdownTimer";
 import BowelPrepScale from "@/components/BowelPrepScale";
 import PrintButton from "@/components/PrintButton";
 import FeedbackWidget from "@/components/FeedbackWidget";
-
-export const metadata: Metadata = {
-  title: "Colonoscopy Prep Instructions",
-  description:
-    "Step-by-step colonoscopy preparation guide with interactive checklist. Know what to eat, what to avoid, and exactly what to do 7 days before through procedure day.",
-};
 
 const timelineColors: Record<string, { badge: string; dot: string }> = {
   "7 days before": { badge: "bg-brand-600 text-white", dot: "bg-brand-600" },
@@ -21,14 +17,15 @@ const timelineColors: Record<string, { badge: string; dot: string }> = {
 };
 
 export default function PrepInstructions() {
-  const section = getSection("prep-instructions");
-  const { intro, timeline, clearLiquids, medications } = section.content;
+  const section = useSection("prep-instructions");
+  const { t } = useLanguage();
+  const { intro, timeline, foodGuide, clearLiquids, medications } = section.content;
 
   return (
     <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12">
       <Link href="/" className="text-sm text-brand-600 hover:text-brand-700 mb-8 inline-flex items-center gap-1 font-medium">
         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" /></svg>
-        Back to Home
+        {t.ui.common.backToHome}
       </Link>
 
       <div className="mb-10">
@@ -57,7 +54,7 @@ export default function PrepInstructions() {
 
       {/* Timeline with Checklists */}
       <div className="space-y-8 mb-14">
-        {timeline.map((step, idx) => {
+        {timeline.map((step: { when: string; heading: string; items: string[] }, idx: number) => {
           const colors = timelineColors[step.when] || { badge: "bg-neutral-600 text-white", dot: "bg-neutral-600" };
           return (
             <div key={step.when} className="relative">
@@ -86,6 +83,49 @@ export default function PrepInstructions() {
         })}
       </div>
 
+      {/* Food Guide — 1 Week Before */}
+      <div className="mb-10">
+        <h2 className="font-heading text-xl font-semibold text-neutral-800 mb-5">{foodGuide.heading}</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="bg-white rounded-2xl p-6 border-2 border-restrict-200 shadow-sm">
+            <div className="flex items-center gap-2 mb-4">
+              <span className="w-8 h-8 bg-restrict-500 rounded-lg flex items-center justify-center text-white">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+              </span>
+              <h3 className="font-heading font-semibold text-restrict-600">Do NOT eat</h3>
+            </div>
+            <ul className="space-y-2.5">
+              {foodGuide.avoid.map((item: string, i: number) => (
+                <li key={i} className="flex gap-2 text-sm text-neutral-700">
+                  <span className="text-restrict-500 flex-shrink-0 mt-0.5">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+                  </span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="bg-white rounded-2xl p-6 border-2 border-success-200 shadow-sm">
+            <div className="flex items-center gap-2 mb-4">
+              <span className="w-8 h-8 bg-success-500 rounded-lg flex items-center justify-center text-white">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
+              </span>
+              <h3 className="font-heading font-semibold text-success-700">OK to eat</h3>
+            </div>
+            <ul className="space-y-2.5">
+              {foodGuide.allowed.map((item: string, i: number) => (
+                <li key={i} className="flex gap-2 text-sm text-neutral-700">
+                  <span className="text-success-500 flex-shrink-0 mt-0.5">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
+                  </span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+
       {/* Clear Liquids Guide */}
       <div className="mb-10">
         <h2 className="font-heading text-xl font-semibold text-neutral-800 mb-5">{clearLiquids.heading}</h2>
@@ -95,10 +135,10 @@ export default function PrepInstructions() {
               <span className="w-8 h-8 bg-success-500 rounded-lg flex items-center justify-center text-white">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
               </span>
-              <h3 className="font-heading font-semibold text-success-700">OK to have</h3>
+              <h3 className="font-heading font-semibold text-success-700">{t.ui.prepPage.okToHave}</h3>
             </div>
             <ul className="space-y-2.5">
-              {clearLiquids.allowed.map((item, i) => (
+              {clearLiquids.allowed.map((item: string, i: number) => (
                 <li key={i} className="flex gap-2 text-sm text-neutral-700">
                   <span className="text-success-500 flex-shrink-0 mt-0.5">
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
@@ -113,10 +153,10 @@ export default function PrepInstructions() {
               <span className="w-8 h-8 bg-restrict-500 rounded-lg flex items-center justify-center text-white">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
               </span>
-              <h3 className="font-heading font-semibold text-restrict-600">Avoid</h3>
+              <h3 className="font-heading font-semibold text-restrict-600">{t.ui.prepPage.avoid}</h3>
             </div>
             <ul className="space-y-2.5">
-              {clearLiquids.avoid.map((item, i) => (
+              {clearLiquids.avoid.map((item: string, i: number) => (
                 <li key={i} className="flex gap-2 text-sm text-neutral-700">
                   <span className="text-restrict-500 flex-shrink-0 mt-0.5">
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
@@ -142,11 +182,11 @@ export default function PrepInstructions() {
             <span className="text-warning-500 mt-0.5">
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
             </span>
-            <p className="text-sm text-neutral-700"><strong className="text-warning-700">Important:</strong> Always confirm medication changes with your doctor. Never stop or change medications on your own.</p>
+            <p className="text-sm text-neutral-700"><strong className="text-warning-700">Important:</strong> {t.ui.prepPage.importantWarning}</p>
           </div>
         </div>
         <div className="space-y-3">
-          {medications.items.map((item) => (
+          {medications.items.map((item: { med: string; note: string }) => (
             <div key={item.med} className="bg-white rounded-xl p-5 border border-neutral-200 shadow-sm">
               <p className="font-semibold text-neutral-800 text-sm">{item.med}</p>
               <p className="text-sm text-neutral-500 mt-1 leading-relaxed">{item.note}</p>
@@ -162,10 +202,10 @@ export default function PrepInstructions() {
       <div className="flex justify-between items-center pt-6 border-t border-neutral-200">
         <Link href="/screening-guidelines" className="inline-flex items-center gap-1 text-brand-600 hover:text-brand-700 font-semibold">
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" /></svg>
-          Screening Guidelines
+          {t.ui.prepPage.prevLink}
         </Link>
         <Link href="/what-to-expect" className="inline-flex items-center gap-1 text-brand-600 hover:text-brand-700 font-semibold">
-          What to Expect
+          {t.ui.prepPage.nextLink}
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
         </Link>
       </div>

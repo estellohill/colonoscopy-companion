@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { trackEvent } from "@/lib/analytics";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 interface PrepLevel {
   score: number;
@@ -18,47 +19,29 @@ interface PrepLevel {
   };
 }
 
-const levels: PrepLevel[] = [
+const levelStyles = [
   {
-    score: 3,
-    label: "Excellent",
     bgColor: "bg-[#48bb78]",
     textColor: "text-white",
     borderColor: "border-[#48bb78]",
-    description: "Clear liquid \u2014 you can see through it like apple juice",
-    message: "Your prep is excellent! This is what we\u2019re aiming for.",
     liquidGradient: { top: "#fef9c3", bottom: "#facc15", opacity: 0.55 },
   },
   {
-    score: 2,
-    label: "Good",
     bgColor: "bg-[#38b2ac]",
     textColor: "text-white",
     borderColor: "border-[#38b2ac]",
-    description: "Mostly clear with some cloudiness",
-    message: "Good prep! Your doctor should be able to see well.",
     liquidGradient: { top: "#fde68a", bottom: "#d4a24a", opacity: 0.7 },
   },
   {
-    score: 1,
-    label: "Fair",
     bgColor: "bg-[#ed8936]",
     textColor: "text-white",
     borderColor: "border-[#ed8936]",
-    description: "Cloudy or brownish \u2014 some residue visible",
-    message:
-      "Fair prep. Continue drinking your prep solution and clear fluids.",
     liquidGradient: { top: "#c4956a", bottom: "#8b6914", opacity: 0.85 },
   },
   {
-    score: 0,
-    label: "Poor",
     bgColor: "bg-[#e53e3e]",
     textColor: "text-white",
     borderColor: "border-[#e53e3e]",
-    description: "Dark or opaque \u2014 cannot see through it",
-    message:
-      "Prep needs more work. Keep drinking fluids and prep solution. If concerned, call your doctor\u2019s office.",
     liquidGradient: { top: "#6b4226", bottom: "#3b1f0b", opacity: 1 },
   },
 ];
@@ -127,16 +110,25 @@ function LiquidCircle({
 
 export default function BowelPrepScale() {
   const [selected, setSelected] = useState<number | null>(null);
+  const { t } = useLanguage();
+
+  // Build levels from translations + hardcoded styles
+  const levels: PrepLevel[] = (t.bowelPrepLevels as unknown as Array<{ score: number; label: string; description: string; message: string }>).map(
+    (lvl, i) => ({
+      ...lvl,
+      ...levelStyles[i],
+    })
+  );
 
   return (
     <section className="bg-neutral-50 rounded-2xl border border-neutral-200 p-5 sm:p-8">
       {/* Header */}
       <div className="text-center mb-6">
         <h2 className="font-heading font-bold text-neutral-800 text-xl sm:text-2xl mb-1">
-          How Is My Prep Going?
+          {t.ui.bowelPrepScale.heading}
         </h2>
         <p className="text-neutral-500 text-sm sm:text-base">
-          Use this visual guide to check if your prep solution is working
+          {t.ui.bowelPrepScale.subtitle}
         </p>
       </div>
 
@@ -172,7 +164,7 @@ export default function BowelPrepScale() {
                     <span
                       className={`inline-flex items-center justify-center rounded-lg ${level.bgColor} ${level.textColor} text-xs font-bold px-2.5 py-1`}
                     >
-                      Score {level.score}
+                      {t.ui.bowelPrepScale.scoreLabel} {level.score}
                     </span>
                     <span className="font-heading font-semibold text-neutral-800 text-base">
                       {level.label}
@@ -220,10 +212,7 @@ export default function BowelPrepScale() {
             />
           </svg>
           <p className="text-sm text-blue-800 leading-relaxed">
-            Your prep should look like{" "}
-            <strong>Score 2 or 3</strong> (clear to slightly cloudy
-            yellow) before your procedure. If your output is still dark
-            or has solid material, continue drinking clear fluids.
+            {t.ui.bowelPrepScale.infoText}
           </p>
         </div>
       </div>
@@ -245,8 +234,7 @@ export default function BowelPrepScale() {
             />
           </svg>
           <p className="text-sm text-neutral-700 leading-relaxed">
-            <strong>Remember:</strong> the better your prep, the more
-            your doctor can see. Good prep = better protection.
+            {t.ui.bowelPrepScale.tipText}
           </p>
         </div>
       </div>

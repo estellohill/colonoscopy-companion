@@ -1,23 +1,20 @@
-import type { Metadata } from "next";
+"use client";
+
 import Link from "next/link";
-import { getSection } from "@/content";
+import { useSection } from "@/content/useSection";
+import { useLanguage } from "@/i18n/LanguageContext";
 import ColonDiagram from "@/components/ColonDiagram";
 
-export const metadata: Metadata = {
-  title: "What Is a Colonoscopy?",
-  description:
-    "Learn what a colonoscopy is, how it works, and why it's considered the gold standard for colon cancer screening. Simple, clear explanation for patients.",
-};
-
 export default function WhatIsColonoscopy() {
-  const section = getSection("what-is-colonoscopy");
+  const section = useSection("what-is-colonoscopy");
+  const { t } = useLanguage();
   const { intro, keyPoints, procedure } = section.content;
 
   return (
     <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12">
       <Link href="/" className="text-sm text-brand-600 hover:text-brand-700 mb-8 inline-flex items-center gap-1 font-medium">
         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" /></svg>
-        Back to Home
+        {t.ui.common.backToHome}
       </Link>
 
       <div className="mb-10">
@@ -30,7 +27,7 @@ export default function WhatIsColonoscopy() {
 
       {/* Key Points */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
-        {keyPoints.map((point) => (
+        {keyPoints.map((point: { heading: string; text: string }) => (
           <div key={point.heading} className="bg-white rounded-2xl p-6 border border-neutral-200 shadow-sm hover:shadow-md transition-shadow">
             <div className="w-10 h-10 bg-brand-50 rounded-xl flex items-center justify-center mb-3">
               <svg className="w-5 h-5 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
@@ -45,7 +42,7 @@ export default function WhatIsColonoscopy() {
       <div className="bg-white rounded-2xl p-6 sm:p-8 border border-neutral-200 shadow-sm mb-10">
         <h2 className="font-heading text-xl font-semibold text-neutral-800 mb-6">{procedure.heading}</h2>
         <ol className="space-y-4">
-          {procedure.steps.map((step, i) => (
+          {procedure.steps.map((step: string, i: number) => (
             <li key={i} className="flex gap-4">
               <span className="flex-shrink-0 w-8 h-8 bg-brand-600 text-white rounded-full flex items-center justify-center text-sm font-semibold shadow-sm">
                 {i + 1}
@@ -58,17 +55,17 @@ export default function WhatIsColonoscopy() {
 
       {/* Anatomy Diagram */}
       <div className="bg-white rounded-2xl p-6 sm:p-8 border border-neutral-200 shadow-sm mb-10">
-        <h2 className="font-heading text-xl font-semibold text-neutral-800 mb-6 text-center">Understanding the Anatomy</h2>
+        <h2 className="font-heading text-xl font-semibold text-neutral-800 mb-6 text-center">{t.ui.whatIsColonoscopy.anatomyHeading}</h2>
         <ColonDiagram />
         <p className="text-sm text-neutral-500 text-center mt-4 leading-relaxed">
-          During a colonoscopy, the scope travels from the rectum through the entire colon to the cecum, examining every section along the way.
+          {t.ui.whatIsColonoscopy.anatomyCaption}
         </p>
       </div>
 
       <div className="flex justify-between items-center pt-6 border-t border-neutral-200">
         <div />
         <Link href="/colon-cancer-polyps" className="inline-flex items-center gap-1 text-brand-600 hover:text-brand-700 font-semibold">
-          Next: Cancer & Polyps
+          {t.ui.whatIsColonoscopy.nextLink}
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
         </Link>
       </div>

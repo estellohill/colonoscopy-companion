@@ -11,36 +11,36 @@
       "subtitle": "A simple look at the procedure",
       "icon": "🔬",
       "color": "teal",
-      "summary": "A colonoscopy is a safe, routine procedure that lets your doctor examine the inside of your colon. It takes about 30 minutes, and you sleep through it.",
+      "summary": "A colonoscopy is a safe, common procedure. Your doctor looks inside your colon using a small camera. It takes about 30 minutes, and you sleep through it.",
       "content": {
-        "intro": "A colonoscopy is a procedure where a gastroenterologist (a doctor who specializes in the digestive system) uses a thin, flexible tube with a tiny camera to look at the lining of your large intestine (colon) and rectum.",
+        "intro": "A colonoscopy lets your doctor look inside your large intestine (colon). They use a thin, flexible tube with a tiny camera on the end. The doctor who does this is called a gastroenterologist — a stomach and bowel doctor.",
         "keyPoints": [
           {
             "heading": "It's quick",
-            "text": "The procedure itself usually takes 20 to 30 minutes. With preparation and recovery time, plan to be at the clinic for 2 to 3 hours total."
+            "text": "The procedure takes about 20 to 30 minutes. Plan to be at the clinic for 2 to 3 hours total."
           },
           {
             "heading": "You'll be comfortable",
-            "text": "You'll receive sedation through an IV so you'll be relaxed or asleep during the procedure. Most people don't remember it at all."
+            "text": "You get sleep medicine (sedation) through an IV. You will be relaxed or asleep. Most people don't remember it at all."
           },
           {
-            "heading": "It's the gold standard",
-            "text": "Colonoscopy is the most thorough way to examine the colon. It's the only screening test that can both find and remove polyps in the same session."
+            "heading": "It's the best test",
+            "text": "A colonoscopy is the best way to check your colon. It can find and remove growths (polyps) in the same visit."
           },
           {
             "heading": "It saves lives",
-            "text": "Regular colonoscopy screening has been shown to reduce colorectal cancer deaths by detecting problems early, when they're most treatable."
+            "text": "Regular screening finds problems early, when they are easiest to treat. This helps prevent colon cancer."
           }
         ],
         "procedure": {
           "heading": "How it works",
           "steps": [
-            "You change into a gown and lie on your side",
-            "An IV is started and sedation medication is given",
-            "The colonoscope is gently inserted and advanced through the colon",
-            "The doctor examines the colon lining on a video screen",
-            "If polyps are found, they can be removed right away (painlessly)",
-            "The scope is withdrawn and you're taken to recovery"
+            "You change into a gown and lie on your left side (this is standard — if you have a shoulder or other concern, let your care team know and they can accommodate you)",
+            "A nurse starts an IV and gives you sleep medicine",
+            "The doctor gently puts the camera tube into your colon",
+            "The doctor looks at your colon on a video screen",
+            "If growths (polyps) are found, they are removed right away — you won't feel it",
+            "The tube is taken out and you go to the recovery room"
           ]
         }
       }
@@ -51,43 +51,43 @@
       "subtitle": "Why early detection matters",
       "icon": "🛡️",
       "color": "blue",
-      "summary": "Colorectal cancer is the 3rd most common cancer in Canada, but it's one of the most preventable. Finding and removing polyps early stops cancer before it starts.",
+      "summary": "Colon cancer is the 3rd most common cancer in Canada. But it is one of the most preventable. Finding and removing polyps early stops cancer before it starts.",
       "content": {
-        "intro": "Colorectal cancer (CRC) develops in the colon or rectum. In most cases, it starts as a small growth called a polyp. Not all polyps become cancer, but removing them eliminates the risk.",
+        "intro": "Colon cancer grows in the large intestine or rectum. Most of the time, it starts as a small growth called a polyp. Not all polyps turn into cancer. But removing them gets rid of the risk.",
         "stats": {
-          "heading": "Colorectal cancer in Canada",
+          "heading": "Colon cancer in Canada",
           "items": [
-            "It's the 3rd most commonly diagnosed cancer in Canada",
-            "About 1 in 14 Canadian men and 1 in 18 Canadian women will develop CRC in their lifetime",
-            "When found early (Stage I), the 5-year survival rate is over 90%",
-            "When found late (Stage IV), the 5-year survival rate drops to about 14%",
-            "Regular screening can prevent up to 60% of CRC deaths"
+            "It's the 3rd most common cancer in Canada",
+            "About 1 in 14 men and 1 in 18 women will get it in their lifetime",
+            "When found early (Stage I), more than 9 out of 10 people survive",
+            "When found late (Stage IV), only about 1 in 7 people survive",
+            "Regular screening can prevent up to 60% of deaths from colon cancer"
           ]
         },
         "polyps": {
           "heading": "What are polyps?",
-          "intro": "Polyps are small growths on the inner lining of the colon. They're very common — about 25-40% of people over 50 have them.",
+          "intro": "Polyps are small growths inside the colon. They are very common — about 1 in 3 people over age 50 have them.",
           "types": [
             {
               "name": "Hyperplastic polyps",
               "risk": "Low",
-              "description": "Usually small and found in the lower colon. These rarely become cancerous."
+              "description": "Usually small. Found in the lower colon. These almost never turn into cancer."
             },
             {
               "name": "Adenomatous polyps (adenomas)",
               "risk": "Moderate",
-              "description": "The most common type that can develop into cancer over time (usually 10-15 years). This is why they're removed during colonoscopy."
+              "description": "The most common type that can turn into cancer over 10 to 15 years. This is why they are removed during a colonoscopy."
             },
             {
               "name": "Sessile serrated polyps",
               "risk": "Moderate to High",
-              "description": "Flat polyps that can be harder to spot. They have a higher potential to become cancerous and are an important reason for thorough colonoscopy."
+              "description": "Flat growths that can be harder to see. They have a higher chance of becoming cancer. This is why a thorough exam matters."
             }
           ]
         },
         "prevention": {
           "heading": "The polyp-to-cancer journey",
-          "text": "Most colon cancers develop slowly from polyps over 10 to 15 years. This long timeline is exactly why screening works so well — there's a large window to find and remove polyps before they ever become dangerous. A colonoscopy interrupts this process by removing polyps during the exam."
+          "text": "Most colon cancers grow slowly from polyps over 10 to 15 years. This slow growth is why screening works so well. There is a big window of time to find and remove polyps before they become dangerous. A colonoscopy stops this process by removing polyps during the exam."
         }
       }
     },
@@ -97,36 +97,36 @@
       "subtitle": "When and how often to get screened",
       "icon": "📋",
       "color": "indigo",
-      "summary": "In British Columbia, colon cancer screening starts at age 50 for average-risk individuals. Your colonoscopy is covered by MSP at no cost when ordered by a physician.",
+      "summary": "In British Columbia, colon cancer screening starts at age 50. Your colonoscopy is covered by MSP at no cost when ordered by a doctor.",
       "content": {
-        "intro": "Screening means checking for cancer or pre-cancerous polyps before you have any symptoms. Canada's guidelines recommend starting at age 50 for people at average risk.",
+        "intro": "Screening means checking for cancer or polyps before you have any symptoms. In Canada, screening is recommended starting at age 50 for people at average risk.",
         "bcProgram": {
           "heading": "BC Colon Screening Program",
           "items": [
-            "The BC Cancer Colon Screening Program recommends a FIT (fecal immunochemical test) every 2 years starting at age 50",
-            "If your FIT test is positive, you'll be referred for a colonoscopy",
-            "If you have higher risk factors, your doctor may recommend starting earlier or going directly to colonoscopy",
-            "Colonoscopy ordered by a physician is fully covered by MSP — there is no cost to you"
+            "BC recommends a stool test (FIT test) every 2 years starting at age 50",
+            "If your FIT test is positive, you will be sent for a colonoscopy",
+            "If you have higher risk factors, your doctor may start screening earlier",
+            "A colonoscopy ordered by a doctor is fully covered by MSP — there is no cost to you"
           ]
         },
         "riskFactors": {
           "heading": "You may need earlier or more frequent screening if you have",
           "items": [
-            "A parent, sibling, or child who had colorectal cancer or advanced polyps",
-            "A personal history of polyps or colorectal cancer",
+            "A parent, brother, sister, or child who had colon cancer or advanced polyps",
+            "A personal history of polyps or colon cancer",
             "Inflammatory bowel disease (Crohn's disease or ulcerative colitis)",
             "Certain genetic conditions (Lynch syndrome, FAP)",
-            "Symptoms such as blood in your stool, unexplained weight loss, or a change in bowel habits"
+            "Symptoms like blood in your stool, weight loss you can't explain, or changes in bowel habits"
           ]
         },
         "frequency": {
           "heading": "How often do you need a colonoscopy?",
           "items": [
-            { "scenario": "Normal colonoscopy (no polyps)", "interval": "Every 10 years" },
-            { "scenario": "1-2 small tubular adenomas", "interval": "Every 5-10 years" },
-            { "scenario": "3-10 adenomas or advanced polyps", "interval": "Every 3 years" },
-            { "scenario": "More than 10 adenomas", "interval": "Within 1 year" },
-            { "scenario": "Family history of CRC", "interval": "Starting at age 40 or 10 years before the youngest affected relative" }
+            { "scenario": "Normal result (no polyps)", "interval": "Every 10 years" },
+            { "scenario": "1-2 small polyps", "interval": "Every 5-10 years" },
+            { "scenario": "3-10 polyps or advanced polyps", "interval": "Every 3 years" },
+            { "scenario": "More than 10 polyps", "interval": "Within 1 year" },
+            { "scenario": "Family history of colon cancer", "interval": "Starting at age 40 or 10 years before the youngest family member who had it" }
           ]
         }
       }
@@ -137,35 +137,35 @@
       "subtitle": "Your step-by-step preparation guide",
       "icon": "✅",
       "color": "emerald",
-      "summary": "Good preparation is the most important thing you can do for a successful colonoscopy. Follow these steps carefully for the best results.",
+      "summary": "Good prep is the most important thing you can do for a successful colonoscopy. Follow these steps carefully for the best results.",
       "content": {
-        "intro": "The quality of your prep directly affects what your doctor can see. A clean colon means a thorough exam, fewer missed polyps, and less chance of needing to repeat the procedure.",
+        "intro": "How well you prep affects what your doctor can see. A clean colon means a better exam, fewer missed polyps, and less chance of needing to repeat the procedure.",
         "timeline": [
           {
             "when": "7 days before",
             "heading": "One week out",
             "items": [
-              "Pick up your prep solution from the pharmacy if you haven't already",
-              "Stop taking iron supplements (they make the colon hard to see)",
-              "Arrange a ride home — you cannot drive after sedation",
-              "Stock up on clear liquids: broth, Jello, apple juice, sports drinks, popsicles"
+              "Pick up your prep solution from the pharmacy — your GI doctor's office will have sent a prescription for you",
+              "Stop taking iron pills (they make your colon hard to see)",
+              "Set up a ride home — you cannot drive after sedation. If you plan to take a taxi or rideshare, someone you know must accompany you as an escort; a driver alone does not count",
+              "Buy clear liquids: broth, Jello, apple juice, sports drinks, popsicles",
+              "Start avoiding high-fibre foods: raw vegetables, corn, nuts, seeds, rice, quinoa, whole grains, popcorn — your GI office prep sheet includes a more complete list"
             ]
           },
           {
             "when": "3 days before",
             "heading": "Three days out",
             "items": [
-              "Avoid high-fibre foods: raw vegetables, corn, nuts, seeds, whole grains, popcorn",
-              "Avoid red or purple liquids and Jello (they can look like blood during the exam)",
-              "Stick to low-residue foods: white bread, eggs, chicken, fish, cheese, yogurt"
+              "Avoid red or purple drinks and Jello (they can look like blood during the exam)",
+              "Eat low-fibre foods: white bread, eggs, chicken, fish, cheese, yogurt"
             ]
           },
           {
             "when": "1 day before",
             "heading": "The day before",
             "items": [
-              "Switch to clear liquids only for the entire day",
-              "Begin drinking your prep solution as directed (usually in the evening)",
+              "Drink only clear liquids for the entire day (see the clear liquids list below)",
+              "Start drinking your prep solution as directed — usually in the afternoon or evening, depending on your procedure time the next day",
               "Stay near a bathroom — the prep works quickly",
               "Keep drinking clear fluids to stay hydrated",
               "Your stool should become clear or light yellow by the end"
@@ -175,45 +175,71 @@
             "when": "Morning of",
             "heading": "Procedure day",
             "items": [
-              "Complete the second half of your split-prep (usually early morning)",
-              "Nothing to eat or drink after finishing your prep (or as directed)",
-              "Take essential medications with a small sip of water (ask your doctor which ones)",
-              "Wear comfortable, loose-fitting clothing",
+              "Drink the second half of your prep (usually early morning)",
+              "Do not eat or drink after you finish your prep (or as told)",
+              "Take must-have medications with a small sip of water (ask your doctor which ones)",
+              "Wear comfortable, loose clothes",
               "Bring your health card and a list of your medications",
-              "Your ride should be available to take you home after"
+              "Make sure your ride is ready to take you home — plan for about 2 to 3 hours from your arrival time"
             ]
           }
         ],
+        "foodGuide": {
+          "heading": "Foods you can and cannot eat — starting 1 week before",
+          "avoid": [
+            "Whole grain breads with visible grains, seeds, or nuts",
+            "Fibre supplements (e.g. Metamucil, Benefibre)",
+            "Nuts (all) and seeds (all)",
+            "Rice (all types), quinoa, couscous, congee",
+            "Beans (all) and lentils (all)",
+            "Berries (all), berry smoothies, and jams with seeds",
+            "Corn, popcorn, oats, oatmeal, granola",
+            "Tomatoes and cucumber (unless all seeds are removed)"
+          ],
+          "allowed": [
+            "White or brown bread with no visible grains, seeds, or nuts",
+            "Dairy products: cheese, yogurt, ice cream",
+            "Eggs, tofu, fish, seafood, meat (all types)",
+            "Roti, naan, pita, pasta, noodles (all types)",
+            "Smooth nut butters, hummus, tzatziki",
+            "Seedless jams and jellies",
+            "Fruits: apples, bananas, mango, oranges, peaches, pears, grapefruit, nectarines, seedless grapes and watermelon",
+            "Vegetables: spinach, kale, cauliflower, broccoli, potatoes, yams, carrots, peas, green beans, lettuce, brussels sprouts, bell peppers (seeds removed)"
+          ]
+        },
         "clearLiquids": {
           "heading": "What counts as a clear liquid?",
           "allowed": [
             "Water",
             "Clear broth (chicken, beef, vegetable)",
             "Apple juice (no pulp)",
+            "White grape juice",
             "White cranberry juice",
             "Ginger ale, Sprite, 7-Up",
-            "Clear sports drinks (Gatorade — not red/purple)",
-            "Black coffee or tea (no milk or cream)",
-            "Jello (not red or purple)",
-            "Popsicles (not red or purple)",
+            "Gatorade (green, yellow, or orange only)",
+            "Black coffee or black/clear tea (no milk or cream)",
+            "Jell-O (green, yellow, or orange only)",
+            "Popsicles (not red, blue, or purple)",
             "Hard candies"
           ],
           "avoid": [
-            "Milk or cream",
+            "Milk, cream, or milk alternatives (coconut, almond, soy, cashew milk)",
             "Orange juice or any juice with pulp",
-            "Red or purple drinks of any kind",
+            "Red, blue, or purple drinks or Jell-O of any kind",
             "Alcohol",
             "Smoothies or protein shakes",
-            "Anything you can't see through"
+            "Coconut water",
+            "Anything you cannot see through"
           ]
         },
         "medications": {
-          "heading": "Medications to discuss with your doctor",
+          "heading": "Medications to talk to your doctor's office about",
           "items": [
-            { "med": "Blood thinners (Warfarin, Eliquis, Xarelto)", "note": "Your doctor will tell you when to stop — usually 3-7 days before" },
-            { "med": "Diabetes medications (insulin, metformin)", "note": "Doses may need adjustment since you'll be fasting" },
-            { "med": "Iron supplements", "note": "Stop 7 days before your procedure" },
-            { "med": "Anti-inflammatory drugs (Aspirin, Ibuprofen)", "note": "Ask your doctor — low-dose ASA is usually continued" }
+            { "med": "Blood thinners (e.g. Warfarin, Eliquis, Xarelto)", "note": "Talk with your doctor's office about exactly when to stop — timing is specific to you and your medication" },
+            { "med": "Diabetes medications (e.g. insulin, metformin)", "note": "You may need to adjust your dose since you will be fasting — check with your doctor's office" },
+            { "med": "Iron pills", "note": "Stop 7 days before your procedure" },
+            { "med": "Aspirin 81 mg (\"baby aspirin\")", "note": "Usually OK to continue taking as normal. If you take a higher dose of aspirin, check with your doctor's office" },
+            { "med": "Any other medications or supplements", "note": "If you take anything not listed here, check with your doctor's office before your procedure — do not assume it is safe to continue" }
           ]
         }
       }
@@ -224,53 +250,53 @@
       "subtitle": "Before, during, and after your procedure",
       "icon": "🏥",
       "color": "sky",
-      "summary": "Knowing what to expect helps reduce anxiety. Here's a step-by-step walkthrough of your colonoscopy day.",
+      "summary": "Knowing what will happen helps you feel less worried. Here is a step-by-step look at your colonoscopy day.",
       "content": {
         "phases": [
           {
             "phase": "Before",
             "icon": "📝",
             "items": [
-              "You'll check in at the endoscopy unit and change into a hospital gown",
-              "A nurse will review your medical history, medications, and allergies",
-              "An IV line will be placed in your arm for sedation and fluids",
-              "You'll meet your gastroenterologist and the care team",
-              "You'll sign a consent form — feel free to ask any questions"
+              "You check in at the endoscopy unit and change into a hospital gown",
+              "A nurse goes over your health history, medications, and allergies",
+              "An IV line is placed in your arm for sleep medicine and fluids",
+              "You meet your doctor and care team",
+              "You sign a consent form — feel free to ask any questions"
             ]
           },
           {
             "phase": "During",
             "icon": "⏱️",
             "items": [
-              "You'll lie on your left side on a stretcher",
-              "Sedation is given through your IV — you'll feel drowsy within moments",
-              "Most patients are asleep or very relaxed throughout the procedure",
-              "The procedure takes about 20-30 minutes",
-              "If polyps are found, they're removed painlessly during the exam",
-              "Tissue samples (biopsies) may be taken — also painless"
+              "You lie on your left side on a stretcher",
+              "Sleep medicine is given through your IV — you feel drowsy in moments",
+              "Most patients are asleep or very relaxed the whole time",
+              "The procedure takes about 20 to 30 minutes",
+              "If polyps are found, they are removed during the exam — you won't feel it",
+              "Small tissue samples (biopsies) may be taken — also painless"
             ]
           },
           {
             "phase": "After",
             "icon": "🛋️",
             "items": [
-              "You'll rest in the recovery area for 30-60 minutes as the sedation wears off",
-              "You may feel slightly bloated or gassy — this is normal and passes quickly",
-              "Your doctor will share the initial results before you leave",
-              "If biopsies were taken, results usually come back in 1-2 weeks",
-              "You can eat normally after the procedure (start light)",
-              "You must not drive, operate machinery, or make important decisions for 24 hours",
-              "Your ride home must be a responsible adult — taxis alone are not accepted at most centres"
+              "You rest in the recovery area for 30 to 60 minutes as the sleep medicine wears off",
+              "You may feel bloated or gassy — this is normal and goes away quickly",
+              "Your doctor shares the results before you leave",
+              "If biopsies were taken, results usually come back in 1 to 2 weeks",
+              "You can eat after the procedure (start with something light)",
+              "Do not drive, use machines, or make big decisions for 24 hours",
+              "You need a responsible adult to take you home — a taxi alone is not accepted at most centres"
             ]
           }
         ],
         "afterPolyps": {
           "heading": "If polyps were removed",
           "items": [
-            "Avoid heavy lifting and strenuous exercise for 3-5 days",
-            "Do not take blood thinners or anti-inflammatory drugs until your doctor says it's safe",
+            "Avoid heavy lifting and hard exercise for 3 to 5 days",
+            "Do not take blood thinners or pain drugs until your doctor says it is safe",
             "A small amount of blood in your first bowel movement is normal",
-            "Call your doctor if you have heavy bleeding, severe abdominal pain, or fever"
+            "Call your doctor if you have heavy bleeding, bad belly pain, or fever"
           ]
         }
       }
@@ -281,7 +307,7 @@
       "subtitle": "Managing anxiety about your colonoscopy",
       "icon": "💬",
       "color": "teal",
-      "summary": "It's completely normal to feel nervous. Evidence-based strategies to manage anxiety, what to expect from sedation, and reassurance from patients who've been through it.",
+      "summary": "It is completely normal to feel nervous. Here you will find tips to manage anxiety, what to expect from sleep medicine, and words from patients who have been through it.",
       "content": {}
     },
     {
@@ -290,7 +316,7 @@
       "subtitle": "Understanding colonoscopy safety",
       "icon": "🛡️",
       "color": "blue",
-      "summary": "Colonoscopy is one of the safest procedures in medicine. Understand the rare risks, how they're managed, and warning signs to watch for after your procedure.",
+      "summary": "A colonoscopy is one of the safest procedures in medicine. Learn about the rare risks, how they are handled, and warning signs to watch for after.",
       "content": {}
     },
     {
@@ -299,72 +325,72 @@
       "subtitle": "Answers to common concerns",
       "icon": "❓",
       "color": "amber",
-      "summary": "Got questions? You're not alone. Here are answers to the most common things patients ask about colonoscopy.",
+      "summary": "Got questions? You are not alone. Here are answers to the most common things patients ask.",
       "content": {
         "questions": [
           {
             "q": "Will it hurt?",
-            "a": "No. You'll be sedated during the procedure, so you won't feel pain. Some people experience mild bloating or cramping afterward, which passes quickly. Most patients say the prep was the hardest part — not the procedure itself."
+            "a": "No. You get sleep medicine, so you won't feel pain. Some people feel mild bloating or cramping afterward, but it goes away quickly. Most patients say the prep was the hardest part — not the procedure itself."
           },
           {
             "q": "Can I drive myself home?",
-            "a": "No. The sedation affects your judgment and reflexes for up to 24 hours, even if you feel fine. You must arrange for a responsible adult to take you home. Most endoscopy centres will cancel your procedure if you don't have a ride arranged."
+            "a": "No. The sleep medicine affects your thinking for up to 24 hours, even if you feel fine. You need a responsible adult to take you home. Most centres will cancel your procedure if you don't have a ride set up."
           },
           {
             "q": "What if I have diabetes?",
-            "a": "Let your doctor know well in advance. You'll need to adjust your diabetes medications, especially insulin, since you'll be fasting. Monitor your blood sugar more frequently during the prep day. Clear liquids with some sugar (like apple juice or sports drinks) can help maintain your levels."
+            "a": "Tell your doctor well ahead of time. You may need to change your diabetes medications since you will be fasting. Check your blood sugar more often on prep day. Clear drinks with some sugar (like apple juice or sports drinks) can help keep your levels up."
           },
           {
             "q": "What if my prep isn't working?",
-            "a": "Give it time — it can take 1-3 hours to start working. Walking around can help stimulate your bowels. Make sure you're drinking the prep as directed (not sipping too slowly). If you're vomiting or nothing is happening after several hours, call your doctor's office or the number on your prep instructions."
+            "a": "Give it time — it can take 1 to 3 hours to start. Walk around to help get things moving. Make sure you are drinking the prep as directed, not too slowly. If nothing is happening after several hours, call your doctor's office."
           },
           {
             "q": "How do I make the prep taste better?",
-            "a": "Chill the prep solution in the fridge. Drink it through a straw. Suck on a hard candy or lemon wedge between glasses. Some people find it easier to drink it quickly rather than sipping. Mixing prep with a clear flavoured drink is only okay if your specific prep instructions allow it."
+            "a": "Chill it in the fridge. Drink it through a straw. Suck on a hard candy or lemon between glasses. Some people find it easier to drink it quickly. Ask if your prep can be mixed with a clear flavoured drink."
           },
           {
-            "q": "What medications should I stop before the procedure?",
-            "a": "This depends on your specific medications. Blood thinners usually need to be stopped 3-7 days before. Iron supplements should be stopped 7 days before. Always confirm with your doctor — never stop medications on your own."
+            "q": "What medications should I stop?",
+            "a": "This depends on what you take. Blood thinners usually need to stop 3 to 7 days before. Iron pills should stop 7 days before. Always check with your doctor — never stop medications on your own."
           },
           {
             "q": "What if they find something?",
-            "a": "If polyps are found, they're typically removed during the procedure — this is actually a good thing, as it prevents them from potentially becoming cancer. Your doctor will discuss the findings and any follow-up needed before you go home. Biopsy results, if taken, usually come back in 1-2 weeks."
+            "a": "If polyps are found, they are usually removed right away. This is actually a good thing — it stops them from becoming cancer. Your doctor will go over the findings before you go home. Biopsy results take 1 to 2 weeks."
           },
           {
             "q": "How often will I need another colonoscopy?",
-            "a": "It depends on what's found. If your colon is completely normal, you may not need another for 10 years. If polyps are found, your doctor will recommend a shorter interval (typically 3-5 years) based on the number, size, and type of polyps."
+            "a": "It depends on what is found. If everything looks normal, you may not need another one for 10 years. If polyps are found, your doctor will suggest a shorter wait — usually 3 to 5 years."
           },
           {
             "q": "Is a colonoscopy covered by MSP in BC?",
-            "a": "Yes. When a colonoscopy is ordered by a physician, it is fully covered by the BC Medical Services Plan (MSP). There is no out-of-pocket cost for the procedure itself. The prep solution is a prescription that you purchase at the pharmacy."
+            "a": "Yes. When a doctor orders your colonoscopy, MSP covers it fully. There is no cost to you for the procedure. The prep solution is a prescription that you buy at the pharmacy."
           },
           {
             "q": "Can I take the day off work?",
-            "a": "You should plan to take the full day off on your procedure day. Most people also prefer to be home the day before due to the prep. You can usually return to normal activities the day after your procedure."
+            "a": "You should take the full day off on procedure day. Most people also stay home the day before for the prep. You can usually go back to normal the day after."
           },
           {
             "q": "What is a split prep and why is it recommended?",
-            "a": "A split prep means you drink half the prep solution the evening before and the second half early in the morning on procedure day. Studies show this produces a significantly cleaner colon compared to drinking it all the night before. It's now the recommended approach by the Canadian Association of Gastroenterology."
+            "a": "Split prep means you drink half the prep the evening before and half early in the morning on procedure day. Studies show this cleans your colon much better than drinking it all the night before. It is the recommended way to prep."
           },
           {
             "q": "I have sleep apnea — does that affect sedation?",
-            "a": "Yes, please inform your care team before the procedure. Patients with sleep apnea may need extra monitoring during sedation. Bring your CPAP machine to the endoscopy unit — some centres may use it during recovery. Your anesthesia team will adjust the sedation plan to keep you safe."
+            "a": "Yes. Please tell your care team before the procedure. You may need extra monitoring. Bring your CPAP machine to the clinic — some centres use it during recovery."
           },
           {
             "q": "Can I brush my teeth before the procedure?",
-            "a": "Yes, you can brush your teeth on the morning of your procedure. Just be careful not to swallow any water. You can also use mouthwash."
+            "a": "Yes. Just be careful not to swallow any water. You can also use mouthwash."
           },
           {
             "q": "What is the difference between a FIT test and a colonoscopy?",
-            "a": "A FIT (fecal immunochemical test) checks for hidden blood in your stool — it's a screening test you do at home. If the FIT is positive, a colonoscopy is done to look directly inside the colon. A colonoscopy is more thorough and can both find and remove polyps in the same session, which a FIT cannot do."
+            "a": "A FIT test checks for hidden blood in your stool. You do it at home. If it is positive, you get a colonoscopy. A colonoscopy looks inside the colon directly and can find and remove polyps in the same visit."
           },
           {
             "q": "Can I take my morning blood pressure or heart medication?",
-            "a": "In most cases, yes. Essential medications like blood pressure pills, heart medications, anti-seizure drugs, and thyroid medications should be taken with a small sip of water on the morning of your procedure. However, always confirm with your doctor, as some medications may need to be held."
+            "a": "Usually, yes. Take important medications like blood pressure pills and heart drugs with a small sip of water on the morning of your procedure. Always check with your doctor first."
           },
           {
             "q": "How long until I get the biopsy results?",
-            "a": "If biopsies or polyps were sent to the pathology lab, results typically take 1 to 2 weeks. Your gastroenterologist's office will contact you with the results and any follow-up recommendations. If you haven't heard back within 2 weeks, call the office to follow up."
+            "a": "Results usually take 1 to 2 weeks. Your doctor's office will contact you. If you haven't heard back in 2 weeks, call them to follow up."
           }
         ]
       }

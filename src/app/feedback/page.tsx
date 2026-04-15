@@ -23,6 +23,10 @@ export default function FeedbackPage() {
     Array(questions.length).fill(null)
   );
   const [comment, setComment] = useState("");
+  const [hadPrevious, setHadPrevious] = useState<string | null>(null);
+  const [comparison, setComparison] = useState<string | null>(null);
+  const [prepCompletion, setPrepCompletion] = useState<string | null>(null);
+  const [referralSource, setReferralSource] = useState<string | null>(null);
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [hoveredStar, setHoveredStar] = useState<{
@@ -37,7 +41,7 @@ export default function FeedbackPage() {
     }
   }, []);
 
-  const allAnswered = scores.every((s) => s !== null);
+  const allAnswered = scores.every((s) => s !== null) && hadPrevious !== null && prepCompletion !== null && referralSource !== null;
 
   const handleScore = (questionIndex: number, value: number) => {
     setScores((prev) => {
@@ -55,6 +59,10 @@ export default function FeedbackPage() {
     scores.forEach((s, i) => {
       scoreData[`q${i + 1}`] = s as number;
     });
+    scoreData.had_previous = hadPrevious!;
+    scoreData.comparison = comparison || "N/A";
+    scoreData.prep_completion = prepCompletion!;
+    scoreData.referral_source = referralSource!;
 
     try {
       if (GOOGLE_FORM_URL) {
@@ -64,6 +72,10 @@ export default function FeedbackPage() {
           formData.append(`q${i + 1}`, String(s));
         });
         formData.append("comment", comment);
+        formData.append("had_previous", hadPrevious!);
+        formData.append("comparison", comparison || "N/A");
+        formData.append("prep_completion", prepCompletion!);
+        formData.append("referral_source", referralSource!);
 
         await fetch(GOOGLE_FORM_URL, {
           method: "POST",
@@ -75,14 +87,14 @@ export default function FeedbackPage() {
       trackEvent("survey_completed", scoreData);
       localStorage.setItem(
         STORAGE_KEY,
-        JSON.stringify({ scores, comment, ts: Date.now() })
+        JSON.stringify({ scores, comment, hadPrevious, comparison, prepCompletion, referralSource, ts: Date.now() })
       );
       setSubmitted(true);
     } catch {
       trackEvent("survey_completed", scoreData);
       localStorage.setItem(
         STORAGE_KEY,
-        JSON.stringify({ scores, comment, ts: Date.now() })
+        JSON.stringify({ scores, comment, hadPrevious, comparison, prepCompletion, referralSource, ts: Date.now() })
       );
       setSubmitted(true);
     } finally {
@@ -224,9 +236,102 @@ export default function FeedbackPage() {
           })}
         </div>
 
+        {/* QI Study Questions */}
+        <div className="space-y-6">
+          {/* Previous colonoscopy */}
+          <div className="bg-neutral-50 rounded-2xl border border-neutral-200 p-5 sm:p-6 space-y-3">
+            <p className="font-heading font-semibold text-neutral-700 text-sm sm:text-base">
+              {questions.length + 1}. Have you had a colonoscopy before?
+            </p>
+            <div className="flex gap-3">
+              {["Yes", "No"].map((opt) => (
+                <button
+                  key={opt}
+                  onClick={() => { setHadPrevious(opt); if (opt === "No") setComparison(null); }}
+                  className={`px-5 py-2.5 rounded-xl text-sm font-medium border transition-colors ${
+                    hadPrevious === opt
+                      ? "bg-brand-600 text-white border-brand-600"
+                      : "bg-white text-neutral-700 border-neutral-200 hover:border-neutral-300"
+                  }`}
+                >
+                  {opt}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Comparison — only shown if hadPrevious === "Yes" */}
+          {hadPrevious === "Yes" && (
+            <div className="bg-neutral-50 rounded-2xl border border-neutral-200 p-5 sm:p-6 space-y-3">
+              <p className="font-heading font-semibold text-neutral-700 text-sm sm:text-base">
+                {questions.length + 2}. Compared to your previous colonoscopy preparation, how was this experience?
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {["Much better", "Somewhat better", "About the same", "Somewhat worse", "Much worse"].map((opt) => (
+                  <button
+                    key={opt}
+                    onClick={() => setComparison(opt)}
+                    className={`px-4 py-2 rounded-xl text-sm font-medium border transition-colors ${
+                      comparison === opt
+                        ? "bg-brand-600 text-white border-brand-600"
+                        : "bg-white text-neutral-700 border-neutral-200 hover:border-neutral-300"
+                    }`}
+                  >
+                    {opt}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Prep completion */}
+          <div className="bg-neutral-50 rounded-2xl border border-neutral-200 p-5 sm:p-6 space-y-3">
+            <p className="font-heading font-semibold text-neutral-700 text-sm sm:text-base">
+              {questions.length + (hadPrevious === "Yes" ? 3 : 2)}. Did you complete all of your prep solution?
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {["Yes, all of it", "Most of it", "About half", "Less than half"].map((opt) => (
+                <button
+                  key={opt}
+                  onClick={() => setPrepCompletion(opt)}
+                  className={`px-4 py-2 rounded-xl text-sm font-medium border transition-colors ${
+                    prepCompletion === opt
+                      ? "bg-brand-600 text-white border-brand-600"
+                      : "bg-white text-neutral-700 border-neutral-200 hover:border-neutral-300"
+                  }`}
+                >
+                  {opt}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Referral source */}
+          <div className="bg-neutral-50 rounded-2xl border border-neutral-200 p-5 sm:p-6 space-y-3">
+            <p className="font-heading font-semibold text-neutral-700 text-sm sm:text-base">
+              {questions.length + (hadPrevious === "Yes" ? 4 : 3)}. How did you hear about this website?
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {["Text/email from clinic", "Doctor\u2019s office", "Search engine", "Friend or family", "Other"].map((opt) => (
+                <button
+                  key={opt}
+                  onClick={() => setReferralSource(opt)}
+                  className={`px-4 py-2 rounded-xl text-sm font-medium border transition-colors ${
+                    referralSource === opt
+                      ? "bg-brand-600 text-white border-brand-600"
+                      : "bg-white text-neutral-700 border-neutral-200 hover:border-neutral-300"
+                  }`}
+                >
+                  {opt}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+
         <div className="bg-neutral-50 rounded-2xl border border-neutral-200 p-5 sm:p-6 space-y-3">
           <p className="font-heading font-semibold text-neutral-700 text-sm sm:text-base">
-            6. What could we improve?
+            {questions.length + (hadPrevious === "Yes" ? 5 : 4)}. What could we improve?
           </p>
           <textarea
             value={comment}
@@ -249,7 +354,7 @@ export default function FeedbackPage() {
 
         {!allAnswered && (
           <p className="text-xs text-neutral-400 text-center">
-            Please answer all 5 questions to submit your feedback.
+            Please answer all questions to submit your feedback.
           </p>
         )}
       </div>

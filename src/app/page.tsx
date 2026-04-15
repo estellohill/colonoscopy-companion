@@ -1,5 +1,7 @@
+"use client";
+
 import Link from "next/link";
-import { hero, sections } from "@/content";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const colorMap: Record<string, { card: string; icon: string }> = {
   teal: {
@@ -28,13 +30,13 @@ const colorMap: Record<string, { card: string; icon: string }> = {
   },
 };
 
-const trustPoints = [
-  { icon: "🔬", text: "Evidence-based content from current CAG and BC Cancer guidelines" },
-  { icon: "👨‍⚕️", text: "Created and reviewed by a Canadian gastroenterologist" },
-  { icon: "🔄", text: "Regularly updated to reflect the latest screening recommendations" },
-];
+const trustIcons = ["🔬", "👨‍⚕️", "🔄"];
 
 export default function Home() {
+  const { t } = useLanguage();
+  const hero = t.hero;
+  const sections = t.sections;
+
   return (
     <div>
       {/* Hero */}
@@ -44,7 +46,7 @@ export default function Home() {
         <div className="relative max-w-3xl mx-auto px-4 sm:px-6 py-20 md:py-28 text-center">
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-1.5 mb-8">
             <span className="w-2 h-2 bg-success-400 rounded-full animate-pulse" />
-            <span className="text-sm text-white/90 font-medium">Free patient education tool</span>
+            <span className="text-sm text-white/90 font-medium">{t.ui.home.badge}</span>
           </div>
           <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-5 leading-tight">
             {hero.title}
@@ -60,7 +62,7 @@ export default function Home() {
               href="/prep-instructions"
               className="inline-flex items-center justify-center gap-2 bg-white text-brand-700 px-8 py-3.5 rounded-xl font-semibold hover:bg-brand-50 transition-colors shadow-lg shadow-brand-900/30"
             >
-              Go to Prep Guide
+              {t.ui.home.cta1}
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
@@ -69,7 +71,7 @@ export default function Home() {
               href="/what-is-colonoscopy"
               className="inline-flex items-center justify-center gap-2 bg-white/10 text-white border border-white/20 px-8 py-3.5 rounded-xl font-semibold hover:bg-white/20 transition-colors"
             >
-              Learn the Basics
+              {t.ui.home.cta2}
             </Link>
           </div>
         </div>
@@ -79,14 +81,14 @@ export default function Home() {
       <section className="max-w-5xl mx-auto px-4 sm:px-6 py-16">
         <div className="text-center mb-12">
           <h2 className="font-heading text-3xl font-bold text-neutral-800 mb-3">
-            Everything You Need to Know
+            {t.ui.home.sectionHeading}
           </h2>
           <p className="text-neutral-500 max-w-lg mx-auto">
-            From understanding the procedure to preparing for it — clear, step-by-step guidance for every stage.
+            {t.ui.home.sectionSubtitle}
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-          {sections.map((section) => {
+          {sections.map((section: { id: string; title: string; subtitle: string; icon: string; color: string; summary: string }) => {
             const colors = colorMap[section.color] || colorMap.teal;
             return (
               <Link
@@ -115,26 +117,26 @@ export default function Home() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-10">
             <h2 className="font-heading text-2xl font-bold text-neutral-800 mb-3">
-              Evidence-Based Information You Can Trust
+              {t.ui.home.trustHeading}
             </h2>
             <p className="text-neutral-500 max-w-lg mx-auto">
-              Built on current Canadian guidelines to give you accurate, reliable information about your procedure.
+              {t.ui.home.trustSubtitle}
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {trustPoints.map((point) => (
-              <div key={point.text} className="flex gap-4 items-start p-5 rounded-xl bg-neutral-50 border border-neutral-100">
-                <span className="text-2xl flex-shrink-0 mt-0.5">{point.icon}</span>
-                <p className="text-sm text-neutral-600 leading-relaxed">{point.text}</p>
+            {t.ui.home.trustPoints.map((text: string, i: number) => (
+              <div key={i} className="flex gap-4 items-start p-5 rounded-xl bg-neutral-50 border border-neutral-100">
+                <span className="text-2xl flex-shrink-0 mt-0.5">{trustIcons[i]}</span>
+                <p className="text-sm text-neutral-600 leading-relaxed">{text}</p>
               </div>
             ))}
           </div>
           <div className="flex flex-wrap justify-center gap-4 mt-8 text-xs text-neutral-400 font-medium">
-            <span>CAG Guidelines</span>
+            <span>{t.ui.home.cagGuidelines}</span>
             <span className="text-neutral-300">|</span>
-            <span>BC Cancer Screening Program</span>
+            <span>{t.ui.home.bcCancerScreening}</span>
             <span className="text-neutral-300">|</span>
-            <span>Last Updated: April 2026</span>
+            <span>{t.ui.home.lastUpdated}</span>
           </div>
         </div>
       </section>

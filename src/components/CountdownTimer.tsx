@@ -2,70 +2,24 @@
 
 import { useState, useEffect } from "react";
 import { trackEvent } from "@/lib/analytics";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 interface TimelineStep {
   daysOut: number;
   label: string;
   heading: string;
+  priority: string;
+  tip: string;
   tasks: string[];
   color: string;
   bgColor: string;
 }
 
-const timeline: TimelineStep[] = [
-  {
-    daysOut: 7,
-    label: "7 days before",
-    heading: "One week out",
-    tasks: [
-      "Pick up your prep solution from the pharmacy",
-      "Stop taking iron supplements",
-      "Arrange a ride home from your procedure",
-      "Stock up on clear liquids (broth, Jello, apple juice, sports drinks)",
-    ],
-    color: "text-brand-700",
-    bgColor: "bg-brand-50 border-brand-200",
-  },
-  {
-    daysOut: 3,
-    label: "3 days before",
-    heading: "Three days out",
-    tasks: [
-      "Switch to low-residue foods (white bread, eggs, chicken, fish)",
-      "Avoid high-fibre foods: raw vegetables, corn, nuts, seeds, popcorn",
-      "Avoid red or purple liquids and Jello",
-    ],
-    color: "text-teal-700",
-    bgColor: "bg-teal-50 border-teal-200",
-  },
-  {
-    daysOut: 1,
-    label: "Day before",
-    heading: "Tomorrow is the day",
-    tasks: [
-      "Clear liquids only for the entire day",
-      "Begin drinking your prep solution as directed (usually evening)",
-      "Stay near a bathroom — the prep works quickly",
-      "Keep drinking clear fluids to stay hydrated",
-    ],
-    color: "text-warning-700",
-    bgColor: "bg-warning-50 border-warning-200",
-  },
-  {
-    daysOut: 0,
-    label: "Today",
-    heading: "Procedure day",
-    tasks: [
-      "Complete the second half of your split-prep (usually early morning)",
-      "Nothing to eat or drink after finishing your prep",
-      "Take essential medications with a small sip of water",
-      "Wear comfortable, loose-fitting clothing",
-      "Bring your health card and medication list",
-      "Your ride should be ready to take you home after",
-    ],
-    color: "text-success-700",
-    bgColor: "bg-success-50 border-success-200",
-  },
+const stepStyles = [
+  { color: "text-brand-700", bgColor: "bg-brand-50 border-brand-200" },
+  { color: "text-teal-700", bgColor: "bg-teal-50 border-teal-200" },
+  { color: "text-warning-700", bgColor: "bg-warning-50 border-warning-200" },
+  { color: "text-success-700", bgColor: "bg-success-50 border-success-200" },
 ];
 
 function getDaysUntil(dateStr: string): number {
@@ -73,14 +27,6 @@ function getDaysUntil(dateStr: string): number {
   today.setHours(0, 0, 0, 0);
   const target = new Date(dateStr + "T00:00:00");
   return Math.ceil((target.getTime() - today.getTime()) / (1000 * 60 * 60 * 24));
-}
-
-function getCurrentStep(daysLeft: number): TimelineStep | null {
-  if (daysLeft < 0) return null;
-  for (const step of timeline) {
-    if (daysLeft >= step.daysOut) return step;
-  }
-  return timeline[timeline.length - 1];
 }
 
 function getProgressPercent(daysLeft: number): number {
@@ -92,6 +38,23 @@ function getProgressPercent(daysLeft: number): number {
 export default function CountdownTimer() {
   const [procedureDate, setProcedureDate] = useState("");
   const [daysLeft, setDaysLeft] = useState<number | null>(null);
+  const { t } = useLanguage();
+
+  // Build timeline from translations + hardcoded styles
+  const timeline: TimelineStep[] = (t.countdownTimeline as unknown as Array<{ daysOut: number; label: string; heading: string; priority: string; tip: string; tasks: string[] }>).map(
+    (step, i) => ({
+      ...step,
+      ...stepStyles[i],
+    })
+  );
+
+  function getCurrentStep(daysRemaining: number): TimelineStep | null {
+    if (daysRemaining < 0) return null;
+    for (const step of timeline) {
+      if (daysRemaining >= step.daysOut) return step;
+    }
+    return timeline[timeline.length - 1];
+  }
 
   useEffect(() => {
     const saved = localStorage.getItem("procedure-date");
@@ -140,9 +103,9 @@ export default function CountdownTimer() {
               <path strokeLinecap="round" strokeLinejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
             </svg>
           </span>
-          <h2 className="font-heading text-lg font-semibold text-white">My Procedure Countdown</h2>
+          <h2 className="font-heading text-lg font-semibold text-white">{t.ui.countdown.heading}</h2>
         </div>
-        <p className="text-brand-200 text-sm">Enter your procedure date to get a personalized prep timeline</p>
+        <p className="text-brand-200 text-sm">{t.ui.countdown.subtitle}</p>
       </div>
 
       <div className="p-5 sm:p-6">
@@ -150,7 +113,7 @@ export default function CountdownTimer() {
         <div className="flex flex-col sm:flex-row gap-3 mb-6">
           <div className="flex-1">
             <label htmlFor="procedure-date" className="block text-sm font-medium text-neutral-600 mb-1.5">
-              Procedure date
+              {t.ui.countdown.dateLabel}
             </label>
             <input
               id="procedure-date"
@@ -166,7 +129,7 @@ export default function CountdownTimer() {
               onClick={clearDate}
               className="self-end px-4 py-2.5 text-sm text-neutral-500 hover:text-neutral-700 hover:bg-neutral-100 rounded-xl transition-colors"
             >
-              Clear
+              {t.ui.countdown.clear}
             </button>
           )}
         </div>
@@ -181,7 +144,7 @@ export default function CountdownTimer() {
                   {daysLeft}
                 </span>
                 <span className="text-neutral-500 font-medium text-sm mt-1">
-                  {daysLeft === 1 ? "day" : "days"} until your procedure
+                  {daysLeft === 1 ? t.ui.countdown.dayUntil : t.ui.countdown.daysUntil}
                 </span>
               </div>
             </div>
@@ -189,8 +152,8 @@ export default function CountdownTimer() {
             {/* Progress bar */}
             <div className="mb-6">
               <div className="flex items-center justify-between text-xs text-neutral-400 mb-2 font-medium">
-                <span>Booked</span>
-                <span>Procedure day</span>
+                <span>{t.ui.countdown.booked}</span>
+                <span>{t.ui.countdown.procedureDay}</span>
               </div>
               <div className="w-full bg-neutral-100 rounded-full h-3">
                 <div
@@ -221,13 +184,19 @@ export default function CountdownTimer() {
               <div className={`rounded-2xl border p-5 sm:p-6 ${currentStep.bgColor}`}>
                 <div className="flex items-center gap-2 mb-3">
                   <span className={`text-xs font-semibold px-2.5 py-1 rounded-full bg-white/80 ${currentStep.color}`}>
-                    {daysLeft === 0 ? "Today" : daysLeft === 1 ? "Tomorrow" : `${daysLeft} days away`}
+                    {daysLeft === 0 ? t.ui.countdown.today : daysLeft === 1 ? t.ui.countdown.tomorrow : `${daysLeft} ${t.ui.countdown.daysAway}`}
                   </span>
                 </div>
                 <h3 className={`font-heading font-semibold text-lg mb-3 ${currentStep.color}`}>
                   {currentStep.heading}
                 </h3>
-                <p className="text-sm text-neutral-600 mb-4 font-medium">Here&apos;s what to focus on right now:</p>
+                <div className="flex items-center gap-2 bg-white/80 rounded-xl px-4 py-3 mb-4 border border-white/60">
+                  <span className="text-lg">&#11088;</span>
+                  <p className="text-sm font-semibold text-neutral-800">
+                    {t.ui.countdown.task1Label} {currentStep.priority}
+                  </p>
+                </div>
+                <p className="text-sm text-neutral-600 mb-4 font-medium">{t.ui.countdown.focusNow}</p>
                 <ul className="space-y-2.5">
                   {currentStep.tasks.map((task, i) => (
                     <li key={i} className="flex gap-2.5 text-sm text-neutral-700">
@@ -240,13 +209,17 @@ export default function CountdownTimer() {
                     </li>
                   ))}
                 </ul>
+                <div className="flex items-start gap-2 mt-4 pt-3 border-t border-white/30">
+                  <span className="text-sm mt-0.5">&#128161;</span>
+                  <p className="text-sm text-neutral-600 italic">{currentStep.tip}</p>
+                </div>
               </div>
             )}
 
             {/* Upcoming steps preview */}
             {daysLeft > 0 && (
               <div className="mt-5">
-                <h4 className="text-sm font-semibold text-neutral-500 mb-3 uppercase tracking-wider">Coming up</h4>
+                <h4 className="text-sm font-semibold text-neutral-500 mb-3 uppercase tracking-wider">{t.ui.countdown.comingUp}</h4>
                 <div className="space-y-2">
                   {timeline
                     .filter((step) => step.daysOut < daysLeft)
@@ -260,7 +233,7 @@ export default function CountdownTimer() {
                           <div>
                             <p className="text-sm font-medium text-neutral-700">{step.heading}</p>
                             <p className="text-xs text-neutral-400">
-                              {daysUntilStep === 1 ? "Tomorrow" : `In ${daysUntilStep} days`}
+                              {daysUntilStep === 1 ? t.ui.countdown.tomorrow : String(t.ui.countdown.inDaysTemplate).replace("%d", String(daysUntilStep))}
                             </p>
                           </div>
                         </div>
@@ -280,9 +253,9 @@ export default function CountdownTimer() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
               </svg>
             </div>
-            <h3 className="font-heading font-semibold text-neutral-800 text-lg mb-2">Procedure complete!</h3>
+            <h3 className="font-heading font-semibold text-neutral-800 text-lg mb-2">{t.ui.countdown.completeHeading}</h3>
             <p className="text-sm text-neutral-500 max-w-sm mx-auto leading-relaxed">
-              We hope everything went well. Remember to follow your doctor&apos;s post-procedure instructions and attend any follow-up appointments.
+              {t.ui.countdown.completeText}
             </p>
           </div>
         )}
@@ -291,7 +264,7 @@ export default function CountdownTimer() {
         {daysLeft === null && (
           <div className="text-center py-4">
             <p className="text-sm text-neutral-400">
-              Enter your procedure date above to see your personalized prep timeline
+              {t.ui.countdown.empty}
             </p>
           </div>
         )}

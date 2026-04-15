@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { trackEvent } from "@/lib/analytics";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const GOOGLE_FORM_URL = "";
 
@@ -11,6 +12,7 @@ export default function FeedbackWidget() {
   const [comment, setComment] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const path = window.location.pathname;
@@ -59,7 +61,7 @@ export default function FeedbackWidget() {
   if (submitted) {
     return (
       <div className="bg-neutral-50 rounded-2xl border border-neutral-200 p-6 text-center">
-        <p className="text-neutral-600 font-medium">Thank you for your feedback!</p>
+        <p className="text-neutral-600 font-medium">{t.ui.feedback.thankYou}</p>
       </div>
     );
   }
@@ -69,13 +71,13 @@ export default function FeedbackWidget() {
       {!rating ? (
         <div className="flex flex-col items-center gap-3">
           <p className="font-heading font-semibold text-neutral-700 text-sm">
-            Was this page helpful?
+            {t.ui.feedback.wasHelpful}
           </p>
           <div className="flex items-center gap-4">
             <button
               onClick={() => handleRating("helpful")}
               className="flex items-center gap-2 px-4 py-2 rounded-xl border border-neutral-200 bg-white text-neutral-600 hover:border-brand-300 hover:text-brand-600 transition-colors text-sm font-medium"
-              aria-label="Yes, this was helpful"
+              aria-label={t.ui.feedback.yes}
             >
               <svg
                 className="w-5 h-5"
@@ -90,12 +92,12 @@ export default function FeedbackWidget() {
                   d="M14 9V5a3 3 0 00-3-3l-4 9v11h11.28a2 2 0 002-1.7l1.38-9a2 2 0 00-2-2.3H14z"
                 />
               </svg>
-              Yes
+              {t.ui.feedback.yes}
             </button>
             <button
               onClick={() => handleRating("not_helpful")}
               className="flex items-center gap-2 px-4 py-2 rounded-xl border border-neutral-200 bg-white text-neutral-600 hover:border-neutral-400 hover:text-neutral-800 transition-colors text-sm font-medium"
-              aria-label="No, this was not helpful"
+              aria-label={t.ui.feedback.no}
             >
               <svg
                 className="w-5 h-5"
@@ -110,19 +112,19 @@ export default function FeedbackWidget() {
                   d="M10 15v4a3 3 0 003 3l4-9V2H5.72a2 2 0 00-2 1.7l-1.38 9a2 2 0 002 2.3H10z"
                 />
               </svg>
-              No
+              {t.ui.feedback.no}
             </button>
           </div>
         </div>
       ) : (
         <div className="space-y-4">
           <p className="font-heading font-semibold text-neutral-700 text-sm text-center">
-            How could we improve this page?
+            {t.ui.feedback.howImprove}
           </p>
           <textarea
             value={comment}
             onChange={(e) => setComment(e.target.value)}
-            placeholder="Optional — share any suggestions..."
+            placeholder={t.ui.feedback.placeholder}
             rows={3}
             className="w-full rounded-xl border border-neutral-200 bg-white px-4 py-3 text-sm text-neutral-700 placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-brand-300 focus:border-brand-300 resize-none"
           />
@@ -132,7 +134,7 @@ export default function FeedbackWidget() {
               disabled={submitting}
               className="px-5 py-2 rounded-xl bg-brand-600 text-white text-sm font-semibold hover:bg-brand-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {submitting ? "Sending..." : "Submit"}
+              {submitting ? t.ui.feedback.submitting : t.ui.feedback.submit}
             </button>
           </div>
         </div>

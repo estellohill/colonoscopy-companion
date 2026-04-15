@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { trackEvent } from "@/lib/analytics";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 interface ChecklistProps {
   items: string[];
@@ -11,6 +12,7 @@ interface ChecklistProps {
 
 export default function PrepChecklist({ items, storageKey, heading }: ChecklistProps) {
   const [checked, setChecked] = useState<Record<number, boolean>>({});
+  const { t } = useLanguage();
 
   useEffect(() => {
     const saved = localStorage.getItem(`prep-${storageKey}`);
@@ -54,7 +56,7 @@ export default function PrepChecklist({ items, storageKey, heading }: ChecklistP
       {allDone && (
         <div className="bg-success-50 border border-success-200 rounded-xl p-3 mb-4 flex items-center gap-2">
           <svg className="w-5 h-5 text-success-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
-          <span className="text-sm text-success-700 font-medium">All done! Great job.</span>
+          <span className="text-sm text-success-700 font-medium">{t.ui.prepChecklist.allDone}</span>
         </div>
       )}
 

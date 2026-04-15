@@ -1,13 +1,10 @@
-import type { Metadata } from "next";
-import Link from "next/link";
-import { getSection } from "@/content";
-import FeedbackWidget from "@/components/FeedbackWidget";
+"use client";
 
-export const metadata: Metadata = {
-  title: "What to Expect During a Colonoscopy",
-  description:
-    "A step-by-step walkthrough of what happens before, during, and after your colonoscopy. Know what to expect so you feel prepared and confident.",
-};
+import Link from "next/link";
+import { useSection } from "@/content/useSection";
+import { useLanguage } from "@/i18n/LanguageContext";
+import FeedbackWidget from "@/components/FeedbackWidget";
+import ShareRideButton from "@/components/ShareRideButton";
 
 const phaseStyles: Record<string, { card: string; number: string }> = {
   Before: { card: "bg-white border-brand-200", number: "bg-brand-600 text-white" },
@@ -16,14 +13,15 @@ const phaseStyles: Record<string, { card: string; number: string }> = {
 };
 
 export default function WhatToExpect() {
-  const section = getSection("what-to-expect");
+  const section = useSection("what-to-expect");
+  const { t } = useLanguage();
   const { phases, afterPolyps } = section.content;
 
   return (
     <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12">
       <Link href="/" className="text-sm text-brand-600 hover:text-brand-700 mb-8 inline-flex items-center gap-1 font-medium">
         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" /></svg>
-        Back to Home
+        {t.ui.common.backToHome}
       </Link>
 
       <div className="mb-10">
@@ -34,7 +32,7 @@ export default function WhatToExpect() {
 
       {/* Phases */}
       <div className="space-y-6 mb-12">
-        {phases.map((phase) => {
+        {phases.map((phase: { phase: string; icon: string; items: string[] }) => {
           const styles = phaseStyles[phase.phase] || phaseStyles.Before;
           return (
             <div
@@ -46,7 +44,7 @@ export default function WhatToExpect() {
                 <h2 className="font-heading text-xl font-semibold text-neutral-800">{phase.phase}</h2>
               </div>
               <ul className="space-y-3.5">
-                {phase.items.map((item, i) => (
+                {phase.items.map((item: string, i: number) => (
                   <li key={i} className="flex gap-3 text-neutral-700">
                     <span className={`flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-xs font-semibold mt-0.5 ${styles.number}`}>
                       {i + 1}
@@ -55,6 +53,11 @@ export default function WhatToExpect() {
                   </li>
                 ))}
               </ul>
+              {phase.phase === "After" && (
+                <div className="mt-4 pt-4 border-t border-success-100">
+                  <ShareRideButton />
+                </div>
+              )}
             </div>
           );
         })}
@@ -69,7 +72,7 @@ export default function WhatToExpect() {
           <h2 className="font-heading text-xl font-semibold text-warning-700">{afterPolyps.heading}</h2>
         </div>
         <ul className="space-y-3">
-          {afterPolyps.items.map((item, i) => (
+          {afterPolyps.items.map((item: string, i: number) => (
             <li key={i} className="flex gap-3 text-neutral-700">
               <span className="flex-shrink-0 text-warning-500 mt-1">
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><circle cx="10" cy="10" r="3" /></svg>
@@ -87,10 +90,10 @@ export default function WhatToExpect() {
       <div className="flex justify-between items-center pt-6 border-t border-neutral-200">
         <Link href="/prep-instructions" className="inline-flex items-center gap-1 text-brand-600 hover:text-brand-700 font-semibold">
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" /></svg>
-          Prep Instructions
+          {t.ui.whatToExpect.prevLink}
         </Link>
         <Link href="/comfort-and-anxiety" className="inline-flex items-center gap-1 text-brand-600 hover:text-brand-700 font-semibold">
-          Comfort & Anxiety
+          {t.ui.whatToExpect.nextLink}
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
         </Link>
       </div>

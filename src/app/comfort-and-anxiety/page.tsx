@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useLanguage } from "@/i18n/LanguageContext";
+import { Icon, SectionIcon } from "@/components/Icons";
 import DoctorQuestions from "@/components/DoctorQuestions";
 import FeedbackWidget from "@/components/FeedbackWidget";
 
@@ -16,7 +17,9 @@ export default function ComfortAndAnxiety() {
       </Link>
 
       <div className="mb-10">
-        <span className="inline-flex items-center justify-center w-14 h-14 bg-teal-50 rounded-2xl text-3xl mb-4">💬</span>
+        <span className="inline-flex items-center justify-center w-14 h-14 bg-teal-50 text-teal-600 rounded-2xl mb-4">
+          <SectionIcon id="comfort-and-anxiety" className="w-7 h-7" />
+        </span>
         <h1 className="font-heading text-3xl md:text-4xl font-bold text-neutral-800 mb-2">{ca.pageTitle}</h1>
         <p className="text-lg text-neutral-500 font-medium">{ca.pageSubtitle}</p>
       </div>
@@ -31,7 +34,7 @@ export default function ComfortAndAnxiety() {
       {/* What patients actually say */}
       <div className="bg-white rounded-2xl border border-neutral-200 shadow-sm p-6 sm:p-8 mb-8">
         <h2 className="font-heading text-2xl font-bold text-neutral-800 mb-4 flex items-center gap-3">
-          <span className="text-2xl">💡</span>
+          <span className="w-9 h-9 bg-neutral-100 text-neutral-600 rounded-xl flex items-center justify-center"><Icon name="sun" className="w-5 h-5" /></span>
           {ca.patientsHeading}
         </h2>
         <div className="space-y-4">
@@ -47,7 +50,7 @@ export default function ComfortAndAnxiety() {
       {/* Common concerns addressed */}
       <div className="bg-white rounded-2xl border border-neutral-200 shadow-sm p-6 sm:p-8 mb-8">
         <h2 className="font-heading text-2xl font-bold text-neutral-800 mb-6 flex items-center gap-3">
-          <span className="text-2xl">🛡️</span>
+          <span className="w-9 h-9 bg-neutral-100 text-neutral-600 rounded-xl flex items-center justify-center"><Icon name="shield" className="w-5 h-5" /></span>
           {ca.concernsHeading}
         </h2>
         <div className="space-y-6">
@@ -63,7 +66,7 @@ export default function ComfortAndAnxiety() {
       {/* Practical tips */}
       <div className="bg-white rounded-2xl border border-neutral-200 shadow-sm p-6 sm:p-8 mb-8">
         <h2 className="font-heading text-2xl font-bold text-neutral-800 mb-6 flex items-center gap-3">
-          <span className="text-2xl">🧘</span>
+          <span className="w-9 h-9 bg-neutral-100 text-neutral-600 rounded-xl flex items-center justify-center"><Icon name="heart" className="w-5 h-5" /></span>
           {ca.tipsHeading}
         </h2>
         <div className="space-y-4">
@@ -82,7 +85,7 @@ export default function ComfortAndAnxiety() {
       {/* Understanding sedation */}
       <div className="bg-white rounded-2xl border border-neutral-200 shadow-sm p-6 sm:p-8 mb-8">
         <h2 className="font-heading text-2xl font-bold text-neutral-800 mb-4 flex items-center gap-3">
-          <span className="text-2xl">💉</span>
+          <span className="w-9 h-9 bg-neutral-100 text-neutral-600 rounded-xl flex items-center justify-center"><Icon name="pill" className="w-5 h-5" /></span>
           {ca.sedationHeading}
         </h2>
         <div className="text-neutral-600 leading-relaxed space-y-4">

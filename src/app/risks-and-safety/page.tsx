@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useLanguage } from "@/i18n/LanguageContext";
+import { Icon, SectionIcon } from "@/components/Icons";
 
 const badgeStyles: Record<string, string> = {
   warning: "bg-warning-100 text-warning-700",
@@ -20,7 +21,9 @@ export default function RisksAndSafety() {
       </Link>
 
       <div className="mb-10">
-        <span className="inline-flex items-center justify-center w-14 h-14 bg-brand-50 rounded-2xl text-3xl mb-4">🛡️</span>
+        <span className="inline-flex items-center justify-center w-14 h-14 bg-brand-50 text-brand-600 rounded-2xl mb-4">
+          <SectionIcon id="risks-and-safety" className="w-7 h-7" />
+        </span>
         <h1 className="font-heading text-3xl md:text-4xl font-bold text-neutral-800 mb-2">{rs.pageTitle}</h1>
         <p className="text-lg text-neutral-500 font-medium">{rs.pageSubtitle}</p>
       </div>
@@ -41,7 +44,7 @@ export default function RisksAndSafety() {
       {/* Risk statistics */}
       <div className="bg-white rounded-2xl border border-neutral-200 shadow-sm p-6 sm:p-8 mb-8">
         <h2 className="font-heading text-2xl font-bold text-neutral-800 mb-6 flex items-center gap-3">
-          <span className="text-2xl">📊</span>
+          <span className="w-9 h-9 bg-neutral-100 text-neutral-600 rounded-xl flex items-center justify-center"><Icon name="clipboard" className="w-5 h-5" /></span>
           {rs.statsHeading}
         </h2>
         <div className="space-y-4">
@@ -62,7 +65,7 @@ export default function RisksAndSafety() {
       {/* Specific risks */}
       <div className="bg-white rounded-2xl border border-neutral-200 shadow-sm p-6 sm:p-8 mb-8">
         <h2 className="font-heading text-2xl font-bold text-neutral-800 mb-6 flex items-center gap-3">
-          <span className="text-2xl">📋</span>
+          <span className="w-9 h-9 bg-neutral-100 text-neutral-600 rounded-xl flex items-center justify-center"><Icon name="clipboard" className="w-5 h-5" /></span>
           {rs.specificRisksHeading}
         </h2>
         <div className="space-y-6">
@@ -81,7 +84,7 @@ export default function RisksAndSafety() {
       {/* Bowel prep risks */}
       <div className="bg-white rounded-2xl border border-neutral-200 shadow-sm p-6 sm:p-8 mb-8">
         <h2 className="font-heading text-2xl font-bold text-neutral-800 mb-4 flex items-center gap-3">
-          <span className="text-2xl">💧</span>
+          <span className="w-9 h-9 bg-neutral-100 text-neutral-600 rounded-xl flex items-center justify-center"><Icon name="cup" className="w-5 h-5" /></span>
           {rs.prepRisksHeading}
         </h2>
         <div className="text-neutral-600 leading-relaxed space-y-4 text-sm">
@@ -100,7 +103,7 @@ export default function RisksAndSafety() {
       {/* When to call / emergency signs */}
       <div className="bg-restrict-50 border border-restrict-200 rounded-2xl p-6 sm:p-8 mb-8">
         <h2 className="font-heading text-xl font-bold text-restrict-600 mb-4 flex items-center gap-3">
-          <span className="text-2xl">🚨</span>
+          <span className="w-9 h-9 bg-neutral-100 text-neutral-600 rounded-xl flex items-center justify-center"><Icon name="alert" className="w-5 h-5" /></span>
           {rs.emergencyHeading}
         </h2>
         <p className="text-neutral-700 text-sm mb-4">
@@ -124,7 +127,7 @@ export default function RisksAndSafety() {
       {/* Reducing your risk */}
       <div className="bg-white rounded-2xl border border-neutral-200 shadow-sm p-6 sm:p-8 mb-10">
         <h2 className="font-heading text-2xl font-bold text-neutral-800 mb-4 flex items-center gap-3">
-          <span className="text-2xl">✅</span>
+          <span className="w-9 h-9 bg-neutral-100 text-neutral-600 rounded-xl flex items-center justify-center"><Icon name="checkCircle" className="w-5 h-5" /></span>
           {rs.safetyMeasuresHeading}
         </h2>
         <div className="text-neutral-600 leading-relaxed space-y-3 text-sm">

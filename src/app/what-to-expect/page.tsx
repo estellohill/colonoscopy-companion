@@ -5,17 +5,20 @@ import { useSection } from "@/content/useSection";
 import { useLanguage } from "@/i18n/LanguageContext";
 import FeedbackWidget from "@/components/FeedbackWidget";
 import ShareRideButton from "@/components/ShareRideButton";
+import { Icon, SectionIcon, type IconName } from "@/components/Icons";
 
-const phaseStyles: Record<string, { card: string; number: string }> = {
-  Before: { card: "bg-white border-brand-200", number: "bg-brand-600 text-white" },
-  During: { card: "bg-white border-teal-200", number: "bg-teal-600 text-white" },
-  After: { card: "bg-white border-success-200", number: "bg-success-500 text-white" },
-};
+// Index order is fixed: Before / During / After
+const phaseStyles = [
+  { card: "bg-white border-brand-200", number: "bg-brand-600 text-white", chip: "bg-brand-50 text-brand-700", icon: "clipboard" as IconName, iconBg: "bg-brand-50 text-brand-600" },
+  { card: "bg-white border-teal-200", number: "bg-teal-600 text-white", chip: "bg-teal-50 text-teal-700", icon: "clock" as IconName, iconBg: "bg-teal-50 text-teal-600" },
+  { card: "bg-white border-success-200", number: "bg-success-500 text-white", chip: "bg-success-50 text-success-700", icon: "bed" as IconName, iconBg: "bg-success-50 text-success-600" },
+];
 
 export default function WhatToExpect() {
   const section = useSection("what-to-expect");
   const { t } = useLanguage();
   const { phases, afterPolyps } = section.content;
+  const durations = t.ui.whatToExpect.durations as unknown as string[];
 
   return (
     <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12">
@@ -25,23 +28,32 @@ export default function WhatToExpect() {
       </Link>
 
       <div className="mb-10">
-        <span className="inline-flex items-center justify-center w-14 h-14 bg-brand-50 rounded-2xl text-3xl mb-4">{section.icon}</span>
+        <span className="inline-flex items-center justify-center w-14 h-14 bg-brand-50 text-brand-600 rounded-2xl mb-4">
+          <SectionIcon id="what-to-expect" className="w-7 h-7" />
+        </span>
         <h1 className="font-heading text-3xl md:text-4xl font-bold text-neutral-800 mb-2">{section.title}</h1>
-        <p className="text-lg text-neutral-500 font-medium">{section.subtitle}</p>
+        <p className="text-lg text-neutral-600 font-medium">{section.subtitle}</p>
       </div>
 
-      {/* Phases */}
+      {/* Phases — duration chips are anxiety medicine */}
       <div className="space-y-6 mb-12">
-        {phases.map((phase: { phase: string; icon: string; items: string[] }) => {
-          const styles = phaseStyles[phase.phase] || phaseStyles.Before;
+        {phases.map((phase: { phase: string; icon: string; items: string[] }, phaseIdx: number) => {
+          const styles = phaseStyles[phaseIdx] || phaseStyles[0];
           return (
             <div
               key={phase.phase}
               className={`rounded-2xl p-6 sm:p-8 border-2 shadow-sm ${styles.card}`}
             >
-              <div className="flex items-center gap-3 mb-5">
-                <span className="text-2xl">{phase.icon}</span>
+              <div className="flex items-center gap-3 mb-5 flex-wrap">
+                <span className={`w-10 h-10 rounded-xl flex items-center justify-center ${styles.iconBg}`}>
+                  <Icon name={styles.icon} className="w-5 h-5" />
+                </span>
                 <h2 className="font-heading text-xl font-semibold text-neutral-800">{phase.phase}</h2>
+                {durations[phaseIdx] && (
+                  <span className={`text-base font-semibold px-3.5 py-1.5 rounded-full ${styles.chip}`}>
+                    {durations[phaseIdx]}
+                  </span>
+                )}
               </div>
               <ul className="space-y-3.5">
                 {phase.items.map((item: string, i: number) => (
@@ -53,9 +65,16 @@ export default function WhatToExpect() {
                   </li>
                 ))}
               </ul>
-              {phase.phase === "After" && (
-                <div className="mt-4 pt-4 border-t border-success-100">
+              {phaseIdx === 2 && (
+                <div className="mt-4 pt-4 border-t border-success-100 flex flex-col sm:flex-row gap-3">
                   <ShareRideButton />
+                  <Link
+                    href="/recovery"
+                    className="inline-flex items-center gap-2 px-4 py-2.5 min-h-12 text-base font-medium text-success-700 bg-success-50 hover:bg-success-100 border border-success-200 rounded-xl transition-colors"
+                  >
+                    <Icon name="heart" className="w-5 h-5" />
+                    {t.ui.recoveryPage.title}
+                  </Link>
                 </div>
               )}
             </div>

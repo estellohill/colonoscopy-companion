@@ -70,6 +70,9 @@
 
 html {
   scroll-behavior: smooth;
+  /* 17px base for the 50–75 primary audience: every rem-based Tailwind size
+     scales up proportionally, and user font-zoom still compounds on top. */
+  font-size: 106.25%;
 }
 
 body {

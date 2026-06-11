@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useSection } from "@/content/useSection";
 import { useLanguage } from "@/i18n/LanguageContext";
+import { SectionIcon } from "@/components/Icons";
 import ColonDiagram from "@/components/ColonDiagram";
 
 export default function WhatIsColonoscopy() {
@@ -18,7 +19,9 @@ export default function WhatIsColonoscopy() {
       </Link>
 
       <div className="mb-10">
-        <span className="inline-flex items-center justify-center w-14 h-14 bg-teal-50 rounded-2xl text-3xl mb-4">{section.icon}</span>
+        <span className="inline-flex items-center justify-center w-14 h-14 bg-teal-50 text-teal-600 rounded-2xl mb-4">
+          <SectionIcon id="what-is-colonoscopy" className="w-7 h-7" />
+        </span>
         <h1 className="font-heading text-3xl md:text-4xl font-bold text-neutral-800 mb-2">{section.title}</h1>
         <p className="text-lg text-neutral-500 font-medium">{section.subtitle}</p>
       </div>

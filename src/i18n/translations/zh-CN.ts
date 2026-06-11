@@ -25,6 +25,7 @@ export const zhCN = {
       badge: "免费患者教育工具",
       cta1: "前往准备指南",
       cta2: "了解基础知识",
+      ctaPlan: "我有检查日期",
       sectionHeading: "您需要了解的一切",
       sectionSubtitle:
         "从了解手术到做好准备——清晰、逐步的指导，涵盖每个阶段。",
@@ -149,11 +150,17 @@ export const zhCN = {
         "重要提示：更改药物前，请务必咨询您的医生。切勿自行停药或更改药物。",
       okToHave: "可以饮用",
       avoid: "避免",
+      redWarning:
+        "全程不要喝红色、蓝色或紫色的饮品、果冻或冰棒。它们在检查中看起来像血——可能导致检查被取消。",
+      doNotEat: "不要吃",
+      okToEat: "可以吃",
+      yourDates: "您的日期",
       prevLink: "筛查指南",
       nextLink: "预期情况",
     },
 
     whatToExpect: {
+      durations: ["约1小时", "20到30分钟", "30到60分钟"],
       prevLink: "准备指示",
       nextLink: "舒适与焦虑",
     },
@@ -181,6 +188,202 @@ export const zhCN = {
         "我即将进行结肠镜检查，因为使用镇静剂，之后需要人接送回家。以下是相关信息：colonoscopycompanion.ca/what-to-expect",
       copied: "已复制到剪贴板！",
       buttonLabel: "分享给接送我的人",
+    },
+
+    plan: {
+      setup: {
+        heading: "我有检查日期",
+        subtitle: "请输入预约信中的信息，我们将为您生成专属的逐日计划。",
+        dateLabel: "检查日期",
+        timeLabel: "检查时间",
+        timeHint: "预约信上的时间。有了它，我们才能生成您的逐小时清肠时间表。",
+        timeUnknownLabel: "我还不知道时间",
+        prepLabel: "医生给您开的是哪种清肠药？",
+        prepHint: "请查看处方或药房给的包装盒。",
+        save: "生成我的计划",
+        update: "保存更改",
+        edit: "修改我的计划",
+        cancel: "取消",
+        clear: "删除我的计划",
+        clearConfirm: "这将从本设备删除您的日期、时间表和清单进度。要继续吗？",
+        disclaimer:
+          "本计划显示的是常规时间安排。如果医生诊所给您的说明单与此不同，请务必按医生的说明执行。",
+      },
+      prepTypes: {
+        peg4l: {
+          name: "PEG 4升清肠液",
+          examples: "PegLyte、Colyte、GoLytely",
+          detail: "一大壶共4升的清肠液，分两次喝。",
+        },
+        bipeglyte: {
+          name: "Bi-PegLyte",
+          examples: "PEG 2升 + 3片药片",
+          detail: "先吃3片小药片，再分两次喝共2升清肠液。",
+        },
+        picosalax: {
+          name: "Pico-Salax",
+          examples: "Pico-Salax、Purg-Odan",
+          detail: "两小包药粉，每包用一杯水冲开喝。",
+        },
+        unsure: {
+          name: "我不确定",
+          examples: "",
+          detail: "我们将显示标准时间表。方便时请查看您的处方。",
+        },
+      },
+      phases: {
+        early: "提前规划",
+        week: "还有一周",
+        diet: "饮食调整",
+        dayBefore: "清肠日",
+        procedure: "检查日",
+        recovery: "恢复期",
+      },
+      home: {
+        yourProcedure: "您的结肠镜检查",
+        at: "于",
+        todayHeading: "今天",
+        onTrack: "一切顺利。今天没有其他要做的了。",
+        viewFullPlan: "查看完整准备指南",
+        viewDoseSchedule: "您的清肠日逐小时时间表",
+        addTimePrompt: "添加检查时间，即可解锁逐小时清肠时间表。",
+        addTimeButton: "添加检查时间",
+        learnHeading: "按自己的节奏了解",
+        learnSubtitle: "想读多少都可以——了解将要发生的事情是消除担心的最好方法。",
+        procedureDone: "您的检查已完成",
+        procedureDoneText:
+          "希望一切顺利。这里是接下来几天的正常情况，以及需要留意的警示信号。",
+        recoveryLink: "阅读恢复指南",
+        startOver: "安排新的检查日期",
+      },
+      calendar: {
+        addButton: "把我的计划加入日历",
+        downloaded: "日历文件已保存——打开它即可添加提醒。",
+        help: "这会把每个关键步骤（饮食调整、每次清肠药、停止饮水时间）的提醒添加到您手机的日历中。",
+      },
+      caregiver: {
+        button: "把我的计划分享给家人",
+        copied: "计划已复制——粘贴到短信里即可。",
+        intro: "我的结肠镜检查已预约。这些是关键日期，请帮我记住：",
+        rideLine: "检查后我需要有人送我回家——因为使用镇静剂，当天我不能开车。",
+        moreInfo: "更多信息：",
+      },
+      events: {
+        pickupPrep: {
+          title: "到药房取清肠药",
+          description: "领取您的清肠药。今天也请停服铁剂，并安排好回家的接送。",
+        },
+        dietChange: {
+          title: "开始吃低纤维食物",
+          description:
+            "从今天起：可以吃白面包、鸡蛋、鸡肉、鱼。不要吃坚果、种子、玉米或生蔬菜。不要喝红色或紫色饮品。",
+        },
+        clearFluidsStart: {
+          title: "全天只喝清流质",
+          description:
+            "从现在到检查前：只喝能看透的液体。水、清汤、苹果汁、运动饮料。不要喝红色、蓝色或紫色的。",
+        },
+        bisacodyl: {
+          title: "服用3片比沙可啶（bisacodyl）药片",
+          description: "用水吞服清肠药附带的3片小药片。不要压碎或咀嚼。",
+        },
+        dose1: {
+          title: "喝第一半清肠药",
+          description: "请待在洗手间附近——药在1到3小时内起效。之后继续喝清流质。",
+        },
+        dose2: {
+          title: "喝第二半清肠药",
+          description: "这个时间很重要——在检查前3到4小时喝完，清肠效果最好。",
+        },
+        npoCutoff: {
+          title: "现在起停止一切饮食",
+          description:
+            "从现在到检查结束，不能再吃喝任何东西——连水也不行。这是为了您在镇静期间的安全。",
+        },
+        leaveForHospital: {
+          title: "准备出发去医院",
+          description: "带上医疗卡和药物清单。穿宽松舒适的衣服。确认好回家的接送。",
+        },
+        procedure: {
+          title: "结肠镜检查",
+          description: "在医院或诊所总共大约需要2到3小时。请按预约信上的到达时间前往。",
+        },
+      },
+      doseDetails: {
+        peg4l: {
+          dose1: "喝2升（8杯）：每10到15分钟喝一杯（250毫升）。大约需要2小时。",
+          dose2: "喝完最后2升（8杯）：每10到15分钟喝一杯。",
+        },
+        bipeglyte: {
+          dose1: "喝1升（4杯）：每10到15分钟喝一杯（250毫升）。",
+          dose2: "喝完最后1升（4杯）：每10到15分钟喝一杯。",
+        },
+        picosalax: {
+          dose1:
+            "把1包药粉倒入一杯凉水中，搅拌2到3分钟后喝下。之后整个晚上再喝至少5杯清流质。",
+          dose2: "把第二包药粉冲入一杯凉水中喝下。继续喝清流质，直到停止饮水时间。",
+        },
+        unsure: {
+          dose1: "严格按照说明单喝第一半清肠药。",
+          dose2: "严格按照说明单喝第二半清肠药。",
+        },
+      },
+      doseSchedule: {
+        heading: "您的清肠日时间表",
+        subtitle: "根据您的检查时间和清肠药类型，逐小时生成",
+        dayBeforeHeading: "检查前一天",
+        procDayHeading: "检查当天",
+        done: "已完成",
+        markDone: "标记为已完成",
+        upNext: "下一步",
+        noTimeHeading: "还差一项：您的检查时间",
+        noTimeText: "清肠药的时间是从检查时间倒推的。填好后我们会显示您的确切钟点。",
+        approxNote: "这是常规时间——如果您的说明单上写的不同，请按说明单执行。",
+        npoWarningTitle: "停止一切饮食的时间：",
+        npoWarningBody:
+          "过了这个时间连水也不能喝。空腹能保证您在镇静期间的安全。如果之后还喝东西，检查可能会被取消。",
+        tipsHeading: "让清肠更轻松",
+        tips: [
+          "把清肠液放冰箱冷藏——凉的好喝得多",
+          "用吸管喝，放到舌头后部",
+          "两杯之间含一颗硬糖或一片柠檬",
+          "两杯之间走动走动——有助于起效",
+        ],
+        notWorking: "还没有动静？",
+        notWorkingText:
+          "起效可能需要1到3小时。继续喝，走动走动，耐心等待。如果喝完第一剂几小时后仍没有动静，请致电医生诊所。",
+        scaleHeading: "检查清肠效果",
+        glassCounter: "杯",
+      },
+    },
+
+    recoveryPage: {
+      title: "结肠镜检查之后",
+      subtitle: "哪些是正常的，哪些不是，以及何时求助",
+      normalHeading: "头一两天的正常现象",
+      normalItems: [
+        "感觉腹胀或排气——走动有助于缓解",
+        "当天因镇静剂感到困倦或头脑不清",
+        "时有时无的轻微绞痛",
+        "如果切除了息肉，第一次排便带少量血",
+        "1到2天没有排便——因为肠道是空的",
+      ],
+      eatHeading: "吃饭、开车和恢复日常",
+      eatItems: [
+        "检查后就可以进食——先从清淡的开始",
+        "今天多喝水，补充清肠流失的水分",
+        "24小时内不要开车、操作机器或签署重要文件",
+        "大多数人第二天就能恢复正常活动",
+        "如果切除了息肉：3到5天内避免提重物和剧烈运动",
+      ],
+      resultsHeading: "什么时候能拿到结果？",
+      resultsText:
+        "医生通常在您离开前告知所见。如果取了组织样本（活检），结果需要1到2周。如果2周后仍未收到通知，请致电医生诊所。",
+      redFlagsHeading: "出现以下情况请立即求助",
+      callLine: "在BC省，任何时间都可拨打811咨询护士。",
+      call811: "拨打811",
+      call911: "紧急情况：拨打911或前往最近的急诊室。",
+      backToHome: "返回我的计划",
     },
 
     printButton: {

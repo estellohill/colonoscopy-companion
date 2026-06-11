@@ -39,8 +39,8 @@ export default function PrepChecklist({ items, storageKey, heading }: ChecklistP
   return (
     <div className="bg-white rounded-2xl border border-neutral-200 p-5 sm:p-6 shadow-sm">
       <div className="flex items-center justify-between mb-1">
-        <h3 className="font-heading font-semibold text-neutral-800 text-sm">{heading}</h3>
-        <span className={`text-sm font-semibold ${allDone ? "text-success-600" : "text-neutral-400"}`}>
+        <h3 className="font-heading font-semibold text-neutral-800 text-base">{heading}</h3>
+        <span className={`text-base font-semibold ${allDone ? "text-success-600" : "text-neutral-500"}`}>
           {completedCount}/{items.length}
         </span>
       </div>
@@ -56,7 +56,7 @@ export default function PrepChecklist({ items, storageKey, heading }: ChecklistP
       {allDone && (
         <div className="bg-success-50 border border-success-200 rounded-xl p-3 mb-4 flex items-center gap-2">
           <svg className="w-5 h-5 text-success-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
-          <span className="text-sm text-success-700 font-medium">{t.ui.prepChecklist.allDone}</span>
+          <span className="text-base text-success-700 font-medium">{t.ui.prepChecklist.allDone}</span>
         </div>
       )}
 
@@ -65,22 +65,22 @@ export default function PrepChecklist({ items, storageKey, heading }: ChecklistP
           <li key={i}>
             <button
               onClick={() => toggle(i)}
-              className="flex items-start gap-3 w-full text-left p-2.5 rounded-xl hover:bg-neutral-50 transition-colors group"
+              className="flex items-start gap-3 w-full text-left p-3 min-h-12 rounded-xl hover:bg-neutral-50 transition-colors group"
             >
               <span
-                className={`flex-shrink-0 w-5 h-5 mt-0.5 rounded-md border-2 flex items-center justify-center transition-all duration-200 ${
+                className={`flex-shrink-0 w-6 h-6 mt-0.5 rounded-md border-2 flex items-center justify-center transition-all duration-200 ${
                   checked[i]
                     ? "bg-success-500 border-success-500 text-white scale-105"
                     : "border-neutral-300 group-hover:border-brand-400"
                 }`}
               >
                 {checked[i] && (
-                  <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                   </svg>
                 )}
               </span>
-              <span className={`text-sm leading-relaxed transition-colors ${checked[i] ? "text-neutral-400 line-through" : "text-neutral-700"}`}>
+              <span className={`text-base leading-relaxed transition-colors ${checked[i] ? "text-neutral-500 line-through" : "text-neutral-700"}`}>
                 {item}
               </span>
             </button>

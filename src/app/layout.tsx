@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { LanguageProvider } from "@/i18n/LanguageContext";
+import { PlanProvider } from "@/components/PlanContext";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ServiceWorkerRegistration from "@/components/ServiceWorkerRegistration";
@@ -74,9 +75,11 @@ export default function RootLayout({
         <Analytics />
         <StructuredData />
         <LanguageProvider>
-          <Navigation />
-          <main className="min-h-screen">{children}</main>
-          <Footer />
+          <PlanProvider>
+            <Navigation />
+            <main className="min-h-screen">{children}</main>
+            <Footer />
+          </PlanProvider>
         </LanguageProvider>
       </body>
     </html>

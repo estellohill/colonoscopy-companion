@@ -25,6 +25,7 @@ export const en = {
       badge: "Free patient education tool",
       cta1: "Go to Prep Guide",
       cta2: "Learn the Basics",
+      ctaPlan: "I have a procedure date",
       sectionHeading: "Everything You Need to Know",
       sectionSubtitle:
         "From understanding the procedure to preparing for it — clear, step-by-step guidance for every stage.",
@@ -150,11 +151,17 @@ export const en = {
         "Important: Always confirm medication changes with your doctor. Never stop or change medications on your own.",
       okToHave: "OK to have",
       avoid: "Avoid",
+      redWarning:
+        "No red, blue, or purple drinks, Jell-O, or popsicles at any point. They can look like blood during the exam — and that can cancel your procedure.",
+      doNotEat: "Do NOT eat",
+      okToEat: "OK to eat",
+      yourDates: "Your dates",
       prevLink: "Screening Guidelines",
       nextLink: "What to Expect",
     },
 
     whatToExpect: {
+      durations: ["About 1 hour", "20 to 30 minutes", "30 to 60 minutes"],
       prevLink: "Prep Instructions",
       nextLink: "Comfort & Anxiety",
     },
@@ -182,6 +189,219 @@ export const en = {
         "I'm having a colonoscopy soon and will need a ride home afterward because of sedation. Here's info about what to expect: colonoscopycompanion.ca/what-to-expect",
       copied: "Copied to clipboard!",
       buttonLabel: "Share with my ride",
+    },
+
+    plan: {
+      setup: {
+        heading: "I have a procedure date",
+        subtitle:
+          "Enter the details from your appointment letter. We will build your personal day-by-day plan.",
+        dateLabel: "Procedure date",
+        timeLabel: "Procedure time",
+        timeHint:
+          "The time on your appointment letter. This lets us build your hour-by-hour prep schedule.",
+        timeUnknownLabel: "I don't know my time yet",
+        prepLabel: "Which prep solution were you prescribed?",
+        prepHint: "Check your prescription or the box from the pharmacy.",
+        save: "Build my plan",
+        update: "Save changes",
+        edit: "Edit my plan",
+        cancel: "Cancel",
+        clear: "Remove my plan",
+        clearConfirm:
+          "This removes your date, schedule, and checklist progress from this device. Continue?",
+        disclaimer:
+          "This plan shows the typical schedule. If the instruction sheet from your doctor's office says something different, always follow your doctor's sheet.",
+      },
+      prepTypes: {
+        peg4l: {
+          name: "PEG 4-litre prep",
+          examples: "PegLyte, Colyte, GoLytely",
+          detail: "One large jug — 4 litres of liquid prep, split into two halves.",
+        },
+        bipeglyte: {
+          name: "Bi-PegLyte",
+          examples: "PEG 2 litres + 3 tablets",
+          detail: "Three small tablets, then 2 litres of liquid prep split into two halves.",
+        },
+        picosalax: {
+          name: "Pico-Salax",
+          examples: "Pico-Salax, Purg-Odan",
+          detail: "Two small sachets. You mix each one in a glass of water.",
+        },
+        unsure: {
+          name: "I'm not sure",
+          examples: "",
+          detail:
+            "We will show the standard schedule. Check your prescription when you can.",
+        },
+      },
+      phases: {
+        early: "Plan ahead",
+        week: "One week out",
+        diet: "Diet changes",
+        dayBefore: "Prep day",
+        procedure: "Procedure day",
+        recovery: "Recovery",
+      },
+      home: {
+        yourProcedure: "Your colonoscopy",
+        at: "at",
+        todayHeading: "Today",
+        onTrack: "You're on track. Nothing else to do today.",
+        viewFullPlan: "See your full prep guide",
+        viewDoseSchedule: "Your prep-day schedule, hour by hour",
+        addTimePrompt:
+          "Add your procedure time to unlock your hour-by-hour prep schedule.",
+        addTimeButton: "Add my procedure time",
+        learnHeading: "Learn at your own pace",
+        learnSubtitle:
+          "Read ahead as much as you like — knowing what happens is the best cure for worry.",
+        procedureDone: "Your procedure is done",
+        procedureDoneText:
+          "We hope it went well. Here's what's normal in the next few days — and the warning signs to watch for.",
+        recoveryLink: "Read the recovery guide",
+        startOver: "Plan a new procedure date",
+      },
+      calendar: {
+        addButton: "Add my plan to my calendar",
+        downloaded: "Calendar file saved — open it to add the events.",
+        help:
+          "This adds reminders for every key step (diet changes, each prep dose, when to stop drinking) to the calendar on your phone.",
+      },
+      caregiver: {
+        button: "Share my plan with a family member",
+        copied: "Plan copied — paste it into a text message.",
+        intro: "My colonoscopy is booked. Here are my key dates so you can help me remember:",
+        rideLine: "I will need a ride home after the procedure — I can't drive that day because of sedation.",
+        moreInfo: "More info:",
+      },
+      events: {
+        pickupPrep: {
+          title: "Pick up colonoscopy prep from the pharmacy",
+          description:
+            "Pick up your prep solution. Also stop iron pills today, and arrange your ride home.",
+        },
+        dietChange: {
+          title: "Start low-fibre foods",
+          description:
+            "From today: white bread, eggs, chicken, fish are good. No nuts, seeds, corn, or raw vegetables. No red or purple drinks.",
+        },
+        clearFluidsStart: {
+          title: "Clear liquids only — all day",
+          description:
+            "From now until your colonoscopy: only liquids you can see through. Water, clear broth, apple juice, sports drinks. Nothing red, blue, or purple.",
+        },
+        bisacodyl: {
+          title: "Take your 3 bisacodyl tablets",
+          description:
+            "Swallow the 3 small tablets that came with your prep, with water. Do not crush or chew them.",
+        },
+        dose1: {
+          title: "Drink the first half of your prep",
+          description:
+            "Stay near a bathroom — it starts working in 1 to 3 hours. Keep drinking clear fluids afterward.",
+        },
+        dose2: {
+          title: "Drink the second half of your prep",
+          description:
+            "This timing matters — finishing 3 to 4 hours before your procedure gives the cleanest result.",
+        },
+        npoCutoff: {
+          title: "STOP all drinks now",
+          description:
+            "Nothing more to eat or drink from now until your procedure — not even water. This keeps you safe during sedation.",
+        },
+        leaveForHospital: {
+          title: "Get ready to leave for the hospital",
+          description:
+            "Bring your health card and medication list. Wear comfortable, loose clothes. Confirm your ride home.",
+        },
+        procedure: {
+          title: "Colonoscopy",
+          description:
+            "Plan to be at the hospital or clinic for 2 to 3 hours in total. Your letter tells you when to arrive — follow it.",
+        },
+      },
+      doseDetails: {
+        peg4l: {
+          dose1:
+            "Drink 2 litres (8 glasses): 1 glass (250 mL) every 10 to 15 minutes. It takes about 2 hours.",
+          dose2: "Drink the last 2 litres (8 glasses): 1 glass every 10 to 15 minutes.",
+        },
+        bipeglyte: {
+          dose1: "Drink 1 litre (4 glasses): 1 glass (250 mL) every 10 to 15 minutes.",
+          dose2: "Drink the last 1 litre (4 glasses): 1 glass every 10 to 15 minutes.",
+        },
+        picosalax: {
+          dose1:
+            "Mix 1 sachet in a glass of cold water, stir for 2 to 3 minutes, and drink it. Then drink at least 5 more glasses of clear fluids over the evening.",
+          dose2:
+            "Mix your second sachet in a glass of cold water and drink it. Keep drinking clear fluids until your stop time.",
+        },
+        unsure: {
+          dose1: "Drink the first half of your prep exactly as your instruction sheet says.",
+          dose2: "Drink the second half of your prep exactly as your instruction sheet says.",
+        },
+      },
+      doseSchedule: {
+        heading: "Your Prep-Day Schedule",
+        subtitle: "Hour by hour, built from your procedure time and your prep type",
+        dayBeforeHeading: "The day before",
+        procDayHeading: "Procedure day",
+        done: "Done",
+        markDone: "Mark as done",
+        upNext: "Up next",
+        noTimeHeading: "One thing missing: your procedure time",
+        noTimeText:
+          "Your prep doses are timed back from your procedure time. Add it and we'll fill in your exact clock times.",
+        approxNote:
+          "Typical times — if your instruction sheet gives different times, follow your sheet.",
+        npoWarningTitle: "Stop ALL food and drink at",
+        npoWarningBody:
+          "Not even water after this time. An empty stomach keeps you safe during sedation. If you drink after this time, your procedure may be cancelled.",
+        tipsHeading: "Make the prep easier",
+        tips: [
+          "Chill the prep in the fridge — cold is much easier to drink",
+          "Drink it through a straw, placed toward the back of your tongue",
+          "Suck on a hard candy or lemon slice between glasses",
+          "Walk around between glasses — it helps things move",
+        ],
+        notWorking: "Nothing happening yet?",
+        notWorkingText:
+          "It can take 1 to 3 hours to start. Keep drinking, walk around, and give it time. If nothing has happened several hours after finishing your first dose, call your doctor's office.",
+        scaleHeading: "Check how your prep is going",
+        glassCounter: "glasses",
+      },
+    },
+
+    recoveryPage: {
+      title: "After Your Colonoscopy",
+      subtitle: "What's normal, what's not, and when to call for help",
+      normalHeading: "Normal in the first day or two",
+      normalItems: [
+        "Feeling bloated or gassy — walking helps it pass",
+        "Feeling sleepy or foggy from the sedation for the rest of the day",
+        "Mild cramping that comes and goes",
+        "A small amount of blood in your first bowel movement if polyps were removed",
+        "No bowel movement for 1 to 2 days — your colon is empty",
+      ],
+      eatHeading: "Eating, driving, and getting back to normal",
+      eatItems: [
+        "You can eat after the procedure — start with something light",
+        "Drink plenty of fluids today to rehydrate after the prep",
+        "Do not drive, use machines, or sign important papers for 24 hours",
+        "Most people are back to normal activities the next day",
+        "If polyps were removed: no heavy lifting or hard exercise for 3 to 5 days",
+      ],
+      resultsHeading: "When will I get my results?",
+      resultsText:
+        "Your doctor usually shares what they saw before you leave. If tissue samples (biopsies) were taken, those results take 1 to 2 weeks. If you haven't heard back in 2 weeks, call your doctor's office.",
+      redFlagsHeading: "Call for help right away if you have",
+      callLine: "In BC, call 811 to speak with a nurse any time, day or night.",
+      call811: "Call 811",
+      call911: "Emergencies: call 911 or go to your nearest emergency department.",
+      backToHome: "Back to your plan",
     },
 
     printButton: {

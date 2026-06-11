@@ -127,7 +127,7 @@ export default function BowelPrepScale() {
         <h2 className="font-heading font-bold text-neutral-800 text-xl sm:text-2xl mb-1">
           {t.ui.bowelPrepScale.heading}
         </h2>
-        <p className="text-neutral-500 text-sm sm:text-base">
+        <p className="text-neutral-600 text-base">
           {t.ui.bowelPrepScale.subtitle}
         </p>
       </div>
@@ -170,14 +170,14 @@ export default function BowelPrepScale() {
                       {level.label}
                     </span>
                   </div>
-                  <p className="text-neutral-600 text-sm leading-relaxed">
+                  <p className="text-neutral-600 text-base leading-relaxed">
                     {level.description}
                   </p>
 
                   {/* Expandable message */}
                   {isSelected && (
                     <div
-                      className={`mt-3 rounded-xl px-4 py-3 text-sm leading-relaxed ${
+                      className={`mt-3 rounded-xl px-4 py-3 text-base leading-relaxed ${
                         level.score >= 2
                           ? "bg-green-50 text-green-800 border border-green-200"
                           : level.score === 1
@@ -211,7 +211,7 @@ export default function BowelPrepScale() {
               d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
             />
           </svg>
-          <p className="text-sm text-blue-800 leading-relaxed">
+          <p className="text-base text-blue-800 leading-relaxed">
             {t.ui.bowelPrepScale.infoText}
           </p>
         </div>
@@ -233,7 +233,7 @@ export default function BowelPrepScale() {
               d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
             />
           </svg>
-          <p className="text-sm text-neutral-700 leading-relaxed">
+          <p className="text-base text-neutral-700 leading-relaxed">
             {t.ui.bowelPrepScale.tipText}
           </p>
         </div>

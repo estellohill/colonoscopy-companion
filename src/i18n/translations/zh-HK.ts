@@ -25,6 +25,7 @@ export const zhHK = {
       badge: "免費病人教育工具",
       cta1: "前往準備指南",
       cta2: "了解基本知識",
+      ctaPlan: "我有檢查日期",
       sectionHeading: "您需要知道的一切",
       sectionSubtitle:
         "從了解手術到做好準備——清晰、逐步的指引，涵蓋每個階段。",
@@ -149,11 +150,17 @@ export const zhHK = {
         "重要提示：更改藥物前，請務必諮詢您的醫生。切勿自行停藥或更改藥物。",
       okToHave: "可以飲用",
       avoid: "避免",
+      redWarning:
+        "全程不要飲紅色、藍色或紫色的飲品、啫喱或冰條。它們在檢查中看起來像血——可能導致檢查被取消。",
+      doNotEat: "不要吃",
+      okToEat: "可以吃",
+      yourDates: "您的日期",
       prevLink: "篩查指引",
       nextLink: "預期情況",
     },
 
     whatToExpect: {
+      durations: ["約1小時", "20至30分鐘", "30至60分鐘"],
       prevLink: "準備指示",
       nextLink: "舒適與焦慮",
     },
@@ -181,6 +188,202 @@ export const zhHK = {
         "我即將進行大腸鏡檢查，因為使用鎮靜劑，之後需要人接送回家。以下是相關資訊：colonoscopycompanion.ca/what-to-expect",
       copied: "已複製到剪貼簿！",
       buttonLabel: "分享給接送我的人",
+    },
+
+    plan: {
+      setup: {
+        heading: "我有檢查日期",
+        subtitle: "請輸入預約信中的資料，我們將為您建立專屬的逐日計劃。",
+        dateLabel: "檢查日期",
+        timeLabel: "檢查時間",
+        timeHint: "預約信上的時間。有了它，我們才能建立您的逐小時清腸時間表。",
+        timeUnknownLabel: "我還不知道時間",
+        prepLabel: "醫生給您處方的是哪種清腸藥？",
+        prepHint: "請查看處方或藥房給的包裝盒。",
+        save: "建立我的計劃",
+        update: "儲存變更",
+        edit: "修改我的計劃",
+        cancel: "取消",
+        clear: "刪除我的計劃",
+        clearConfirm: "這將從本裝置刪除您的日期、時間表和清單進度。要繼續嗎？",
+        disclaimer:
+          "本計劃顯示的是一般時間安排。如果醫生診所給您的說明書與此不同，請務必按醫生的說明執行。",
+      },
+      prepTypes: {
+        peg4l: {
+          name: "PEG 4公升清腸液",
+          examples: "PegLyte、Colyte、GoLytely",
+          detail: "一大壺共4公升的清腸液，分兩次飲用。",
+        },
+        bipeglyte: {
+          name: "Bi-PegLyte",
+          examples: "PEG 2公升 + 3粒藥片",
+          detail: "先服3粒小藥片，再分兩次飲用共2公升清腸液。",
+        },
+        picosalax: {
+          name: "Pico-Salax",
+          examples: "Pico-Salax、Purg-Odan",
+          detail: "兩小包藥粉，每包用一杯水沖開飲用。",
+        },
+        unsure: {
+          name: "我不確定",
+          examples: "",
+          detail: "我們將顯示標準時間表。方便時請查看您的處方。",
+        },
+      },
+      phases: {
+        early: "提前規劃",
+        week: "還有一週",
+        diet: "飲食調整",
+        dayBefore: "清腸日",
+        procedure: "檢查日",
+        recovery: "康復期",
+      },
+      home: {
+        yourProcedure: "您的大腸鏡檢查",
+        at: "於",
+        todayHeading: "今天",
+        onTrack: "一切順利。今天沒有其他要做的了。",
+        viewFullPlan: "查看完整準備指南",
+        viewDoseSchedule: "您的清腸日逐小時時間表",
+        addTimePrompt: "新增檢查時間，即可解鎖逐小時清腸時間表。",
+        addTimeButton: "新增檢查時間",
+        learnHeading: "按自己的步伐了解",
+        learnSubtitle: "想讀多少都可以——了解將會發生的事情是消除擔心的最好方法。",
+        procedureDone: "您的檢查已完成",
+        procedureDoneText:
+          "希望一切順利。這裡是接下來幾天的正常情況，以及需要留意的警示徵兆。",
+        recoveryLink: "閱讀康復指南",
+        startOver: "安排新的檢查日期",
+      },
+      calendar: {
+        addButton: "把我的計劃加入日曆",
+        downloaded: "日曆檔案已儲存——開啟它即可加入提醒。",
+        help: "這會把每個關鍵步驟（飲食調整、每次清腸藥、停止飲水時間）的提醒加入您手機的日曆。",
+      },
+      caregiver: {
+        button: "把我的計劃分享給家人",
+        copied: "計劃已複製——貼上到短訊裡即可。",
+        intro: "我的大腸鏡檢查已預約。這些是關鍵日期，請幫我記住：",
+        rideLine: "檢查後我需要有人送我回家——因為使用鎮靜劑，當天我不能駕駛。",
+        moreInfo: "更多資訊：",
+      },
+      events: {
+        pickupPrep: {
+          title: "到藥房取清腸藥",
+          description: "領取您的清腸藥。今天也請停服鐵丸，並安排好回家的接送。",
+        },
+        dietChange: {
+          title: "開始吃低纖維食物",
+          description:
+            "從今天起：可以吃白麵包、雞蛋、雞肉、魚。不要吃果仁、種子、粟米或生菜。不要飲紅色或紫色飲品。",
+        },
+        clearFluidsStart: {
+          title: "全日只飲清流質",
+          description:
+            "從現在到檢查前：只飲能看透的液體。水、清湯、蘋果汁、運動飲品。不要飲紅色、藍色或紫色的。",
+        },
+        bisacodyl: {
+          title: "服用3粒比沙可啶（bisacodyl）藥片",
+          description: "用水吞服清腸藥附帶的3粒小藥片。不要壓碎或咀嚼。",
+        },
+        dose1: {
+          title: "飲第一半清腸藥",
+          description: "請留在洗手間附近——藥在1至3小時內起效。之後繼續飲清流質。",
+        },
+        dose2: {
+          title: "飲第二半清腸藥",
+          description: "這個時間很重要——在檢查前3至4小時飲完，清腸效果最好。",
+        },
+        npoCutoff: {
+          title: "現在起停止一切飲食",
+          description:
+            "從現在到檢查結束，不能再吃喝任何東西——連水也不行。這是為了您在鎮靜期間的安全。",
+        },
+        leaveForHospital: {
+          title: "準備出發去醫院",
+          description: "帶上醫療卡和藥物清單。穿寬鬆舒適的衣服。確認好回家的接送。",
+        },
+        procedure: {
+          title: "大腸鏡檢查",
+          description: "在醫院或診所總共大約需要2至3小時。請按預約信上的到達時間前往。",
+        },
+      },
+      doseDetails: {
+        peg4l: {
+          dose1: "飲2公升（8杯）：每10至15分鐘飲一杯（250毫升）。大約需要2小時。",
+          dose2: "飲完最後2公升（8杯）：每10至15分鐘飲一杯。",
+        },
+        bipeglyte: {
+          dose1: "飲1公升（4杯）：每10至15分鐘飲一杯（250毫升）。",
+          dose2: "飲完最後1公升（4杯）：每10至15分鐘飲一杯。",
+        },
+        picosalax: {
+          dose1:
+            "把1包藥粉倒入一杯凍水中，攪拌2至3分鐘後飲下。之後整個晚上再飲至少5杯清流質。",
+          dose2: "把第二包藥粉沖入一杯凍水中飲下。繼續飲清流質，直到停止飲水時間。",
+        },
+        unsure: {
+          dose1: "嚴格按照說明書飲第一半清腸藥。",
+          dose2: "嚴格按照說明書飲第二半清腸藥。",
+        },
+      },
+      doseSchedule: {
+        heading: "您的清腸日時間表",
+        subtitle: "根據您的檢查時間和清腸藥類型，逐小時建立",
+        dayBeforeHeading: "檢查前一天",
+        procDayHeading: "檢查當天",
+        done: "已完成",
+        markDone: "標記為已完成",
+        upNext: "下一步",
+        noTimeHeading: "還欠一項：您的檢查時間",
+        noTimeText: "清腸藥的時間是從檢查時間倒推的。填好後我們會顯示您的確切鐘點。",
+        approxNote: "這是一般時間——如果您的說明書上寫的不同，請按說明書執行。",
+        npoWarningTitle: "停止一切飲食的時間：",
+        npoWarningBody:
+          "過了這個時間連水也不能飲。空腹能保證您在鎮靜期間的安全。如果之後還飲東西，檢查可能會被取消。",
+        tipsHeading: "讓清腸更輕鬆",
+        tips: [
+          "把清腸液放雪櫃冷藏——凍的好飲得多",
+          "用飲管飲，放到舌頭後部",
+          "兩杯之間含一粒硬糖或一片檸檬",
+          "兩杯之間行下走下——有助於起效",
+        ],
+        notWorking: "還沒有動靜？",
+        notWorkingText:
+          "起效可能需要1至3小時。繼續飲，行下走下，耐心等待。如果飲完第一劑幾小時後仍沒有動靜，請致電醫生診所。",
+        scaleHeading: "檢查清腸效果",
+        glassCounter: "杯",
+      },
+    },
+
+    recoveryPage: {
+      title: "大腸鏡檢查之後",
+      subtitle: "哪些是正常的，哪些不是，以及何時求助",
+      normalHeading: "頭一兩天的正常現象",
+      normalItems: [
+        "感覺腹脹或排氣——走動有助於緩解",
+        "當天因鎮靜劑感到困倦或頭腦不清",
+        "時有時無的輕微絞痛",
+        "如果切除了瘜肉，第一次排便帶少量血",
+        "1至2天沒有排便——因為腸道是空的",
+      ],
+      eatHeading: "吃飯、駕駛和恢復日常",
+      eatItems: [
+        "檢查後就可以進食——先從清淡的開始",
+        "今天多飲水，補充清腸流失的水分",
+        "24小時內不要駕駛、操作機器或簽署重要文件",
+        "大多數人第二天就能恢復正常活動",
+        "如果切除了瘜肉：3至5天內避免提重物和劇烈運動",
+      ],
+      resultsHeading: "甚麼時候能拿到結果？",
+      resultsText:
+        "醫生通常在您離開前告知所見。如果取了組織樣本（活檢），結果需要1至2星期。如果2星期後仍未收到通知，請致電醫生診所。",
+      redFlagsHeading: "出現以下情況請立即求助",
+      callLine: "在BC省，任何時間都可致電811諮詢護士。",
+      call811: "致電811",
+      call911: "緊急情況：致電911或前往最近的急症室。",
+      backToHome: "返回我的計劃",
     },
 
     printButton: {
